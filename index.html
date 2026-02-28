@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tebe Williams - Physical AI & Finance Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #f4f6fb;
+  --bg2:       #e9ecf4;
+  --bg-card:   #ffffff;
+  --bg-card-h: #f0f3fb;
+  --cyan:      #2d7d52;
+  --blue:      #1e3a8a;
+  --gold:      #c47a0a;
+  --green:     #1d6b40;
+  --txt:       #111827;
+  --txt2:      #4b5563;
+  --muted:     #6b7280;
+  --border:    #c5cad8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(244,246,251,0.92);border-bottom:1px solid rgba(0,0,0,0.08);transition:all .3s}
+nav .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:-.02em}
+nav .logo span{color:var(--cyan)}
+nav ul{display:flex;list-style:none;gap:2.2rem}
+nav ul a{color:var(--txt2);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .3s;position:relative}
+nav ul a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--cyan);transition:width .3s}
+nav ul a:hover{color:var(--txt)}nav ul a:hover::after{width:100%}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--txt);border-radius:2px;transition:all .3s}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:5rem 3rem 3rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.22;filter:saturate(.5)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(244,246,251,.94) 0%,rgba(244,246,251,.70) 50%,rgba(244,246,251,.94) 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.04) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at 50% 40%,black 20%,transparent 70%);z-index:1}
+.hero-content{max-width:1300px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.2fr .8fr;gap:4rem;align-items:center;position:relative;z-index:2}
+.hero-text h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.6rem,4.8vw,4rem);font-weight:700;line-height:1.08;letter-spacing:-.03em;margin-bottom:1.3rem}
+.hero-text h1 .hl{background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-text .tagline{font-size:1.08rem;color:var(--txt2);max-width:520px;margin-bottom:1.8rem;line-height:1.8}
+.hero-cta{display:flex;gap:1rem;margin-bottom:2.5rem}
+.btn-p{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.8rem;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;border-radius:8px;transition:all .3s;border:none;cursor:pointer}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(45,125,82,.3)}
+.btn-s{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.8rem;background:transparent;color:var(--txt);text-decoration:none;font-weight:500;font-size:.88rem;border-radius:8px;border:1px solid var(--border);transition:all .3s}
+.btn-s:hover{border-color:var(--cyan);color:var(--cyan)}
+.hero-stats{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.hero-stat .num{font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:700;color:var(--cyan);line-height:1}
+.hero-stat .lbl{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:.3rem}
+.hero-visual{display:flex;justify-content:center;align-items:center}
+.headshot-wrap{position:relative;width:340px;height:420px}
+.headshot-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:12px;position:relative;z-index:2;filter:saturate(.85) contrast(1.05)}
+.headshot-wrap::before{content:'';position:absolute;inset:-3px;border-radius:14px;background:linear-gradient(135deg,var(--cyan),var(--blue),var(--gold));z-index:1}
+.headshot-wrap::after{content:'';position:absolute;top:16px;left:16px;right:-16px;bottom:-16px;border:1px solid var(--cyan);border-radius:12px;opacity:.25;z-index:0}
+
+/* SECTIONS */
+section{padding:6rem 3rem;max-width:1300px;margin:0 auto}
+.slbl{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.8rem;display:flex;align-items:center;gap:.75rem}
+.slbl::before{content:'';width:24px;height:1px;background:var(--cyan)}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,3.2vw,2.6rem);font-weight:700;letter-spacing:-.02em;margin-bottom:1rem;line-height:1.2}
+.ssub{color:var(--txt2);font-size:1rem;max-width:600px;margin-bottom:2.5rem}
+.divider{max-width:1300px;margin:0 auto;padding:0 3rem}
+.divider hr{border:none;height:1px;background:var(--border)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.about-text p{color:var(--txt2);margin-bottom:1.3rem;font-size:.98rem}
+.about-text p strong{color:var(--txt)}
+.hl-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:.7rem 1.2rem;transition:all .3s;margin-bottom:.55rem;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.hl-card:hover{border-color:rgba(45,125,82,.3);transform:translateX(4px)}
+.hl-card h4{font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:600;margin-bottom:.3rem}
+.hl-card p{font-size:.84rem;color:var(--txt2);line-height:1.6}
+
+/* CASE STUDIES */
+.case-study{background:var(--bg2);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-bottom:2.5rem;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.case-hero{position:relative;height:360px;overflow:hidden}
+.case-hero img{width:100%;height:100%;object-fit:cover}
+.case-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg2) 0%,transparent 60%)}
+.case-hero .case-badge{position:absolute;top:0;left:0;right:0;z-index:2;padding:.7rem 2rem;background:rgba(17,24,39,.6);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.1);font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#fff;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:.6rem}
+.case-hero .case-badge .dot{width:4px;height:4px;border-radius:50%;background:var(--cyan);flex-shrink:0}
+.case-body{padding:2rem 2.5rem 2.5rem}
+.case-body h3{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:.3rem}
+.case-body .case-role{font-size:.88rem;color:var(--cyan);margin-bottom:1rem;font-weight:500}
+.case-body p{color:var(--txt2);font-size:.92rem;margin-bottom:1.2rem;max-width:700px}
+.case-metrics{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.case-metric .val{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.case-metric .desc{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem}
+.case-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;padding:0 2.5rem 2.5rem}
+.case-gallery img{width:100%;height:160px;object-fit:cover;border-radius:8px;border:1px solid var(--border);transition:all .3s;cursor:pointer}
+.case-gallery img:hover{border-color:rgba(45,125,82,.3);transform:scale(1.02)}
+
+/* EXPERTISE */
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.exp-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:1.8rem;position:relative;overflow:hidden;transition:all .35s;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.exp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--blue));opacity:0;transition:opacity .3s}
+.exp-card:hover{border-color:rgba(45,125,82,.2);transform:translateY(-3px);background:var(--bg-card-h)}
+.exp-card:hover::before{opacity:1}
+.exp-card .icon{width:44px;height:44px;border-radius:10px;background:rgba(45,125,82,.1);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1rem}
+.exp-card h3{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;margin-bottom:.5rem}
+.exp-card p{font-size:.84rem;color:var(--txt2);line-height:1.7}
+
+/* CONSULTING */
+.con-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3rem}
+.con-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:2rem;transition:all .35s;position:relative;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.con-card:hover{border-color:rgba(196,122,10,.3);transform:translateY(-3px)}
+.con-card .num{font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;color:rgba(196,122,10,.12);position:absolute;top:.8rem;right:1.2rem;line-height:1}
+.con-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:.4rem;color:var(--gold)}
+.con-card p{font-size:.84rem;color:var(--txt2);line-height:1.7}
+.con-card .tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.8rem}
+.con-card .tag{padding:.15rem .55rem;background:rgba(196,122,10,.06);border:1px solid rgba(196,122,10,.18);border-radius:4px;font-size:.68rem;color:var(--gold);font-family:'JetBrains Mono',monospace}
+.con-cta{text-align:center;margin-top:2.5rem;padding:2.5rem;background:linear-gradient(135deg,rgba(196,122,10,.04),rgba(30,58,138,.04));border:1px solid rgba(196,122,10,.12);border-radius:14px}
+.con-cta h3{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.6rem}
+.con-cta p{color:var(--txt2);margin-bottom:1.2rem;font-size:.92rem}
+.btn-g{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.8rem;background:linear-gradient(135deg,var(--gold),#a06208);color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;border-radius:8px;transition:all .3s;border:none;cursor:pointer}
+.btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(196,122,10,.3)}
+
+/* INSIGHTS */
+.ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.ins-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .35s;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.ins-card:hover{border-color:rgba(45,125,82,.2);transform:translateY(-3px)}
+.ins-card .card-img{height:170px;position:relative;overflow:hidden}
+.ins-card .card-img img{width:100%;height:100%;object-fit:cover;opacity:.8;transition:opacity .3s}
+.ins-card:hover .card-img img{opacity:1}
+.ins-card .card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,var(--bg-card))}
+.ins-card .card-body{padding:1.3rem}
+.ins-card .card-tag{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem}
+.ins-card h3{font-family:'Space Grotesk',sans-serif;font-size:.98rem;font-weight:600;margin-bottom:.4rem;line-height:1.3}
+.ins-card p{font-size:.8rem;color:var(--txt2);line-height:1.6}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:2.8rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--cyan),var(--blue),var(--border))}
+.tl-item{position:relative;padding-bottom:2.5rem}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-2.8rem;top:5px;width:10px;height:10px;border-radius:50%;background:var(--cyan);border:3px solid var(--bg);transform:translateX(-4px)}
+.tl-item.past::before{background:var(--muted)}
+.tl-date{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--cyan);letter-spacing:.05em;margin-bottom:.2rem}
+.tl-item.past .tl-date{color:var(--muted)}
+.tl-co{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:.1rem}
+.tl-role{font-size:.85rem;color:var(--txt2);margin-bottom:.4rem}
+.tl-desc{font-size:.84rem;color:var(--muted);max-width:520px}
+.tl-badge{display:inline-block;padding:.15rem .55rem;background:rgba(29,107,64,.1);color:var(--green);font-family:'JetBrains Mono',monospace;font-size:.65rem;border-radius:4px;margin-top:.4rem}
+
+/* CONTACT */
+#contact{text-align:center}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.5rem}
+.contact-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.8rem;transition:all .3s;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.contact-card:hover{border-color:rgba(45,125,82,.25)}
+.contact-card .ci{font-size:1.4rem;margin-bottom:.6rem}
+.contact-card h4{font-family:'Space Grotesk',sans-serif;font-size:.85rem;font-weight:600;margin-bottom:.2rem}
+.contact-card a,.contact-card p{font-size:.85rem;color:var(--txt2);text-decoration:none}
+.contact-card a:hover{color:var(--cyan)}
+
+/* FOOTER */
+footer{padding:2.5rem 3rem;text-align:center;border-top:1px solid var(--border)}
+footer p{font-size:.75rem;color:var(--muted)}
+footer .fl{display:flex;justify-content:center;gap:2rem;margin-bottom:.8rem}
+footer .fl a{color:var(--txt2);text-decoration:none;font-size:.78rem;transition:color .3s}
+footer .fl a:hover{color:var(--cyan)}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(25px);transition:all .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-content{grid-template-columns:1fr;text-align:center}
+  .hero-visual{order:-1}
+  .headshot-wrap{width:260px;height:320px}
+  .hero-text .tagline{margin:0 auto 1.5rem}
+  .hero-stats{justify-content:center;flex-wrap:wrap}
+  .hero-cta{justify-content:center}
+  .about-grid{grid-template-columns:1fr}
+  .exp-grid{grid-template-columns:repeat(2,1fr)}
+  .con-grid{grid-template-columns:1fr}
+  .ins-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .case-gallery{grid-template-columns:repeat(3,1fr)}
+  nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:1rem 1.5rem;flex-direction:column;gap:.3rem;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+  nav ul.open{display:flex}
+  .nav-toggle{display:flex}
+}
+@media(max-width:640px){
+  nav{padding:.8rem 1.2rem}
+  section{padding:3.5rem 1.2rem}
+  .hero{padding:5rem 1.2rem 2.5rem}
+  .hero-stats{flex-direction:column;gap:.8rem;align-items:center}
+  .exp-grid{grid-template-columns:1fr}
+  .case-hero{height:220px}
+  .case-gallery{grid-template-columns:1fr;padding:0 1.5rem 1.5rem}
+  .case-body{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">tebe<span>.</span>williams</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#consulting">Consulting</a></li>
+    <!-- <li><a href="#insights">Insights</a></li> -->
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"><img src="images/volley-hero.jpg" alt=""></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Finance leader at the frontier of <span class="hl">Physical AI</span></h1>
+      <p class="tagline">I'm Tebe Williams - a CFO/COO who has deployed 50,000+ intelligent devices coast-to-coast, led two high-value exits, and built the financial and operating systems that turn robotic and AI products into scalable businesses.</p>
+      <div class="hero-cta">
+        <a href="#consulting" class="btn-p">Explore Consulting →</a>
+        <a href="#contact" class="btn-p">Get in Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">25+</div><div class="lbl">Years Experience</div></div>
+        <div class="hero-stat"><div class="num">50K+</div><div class="lbl">Devices Deployed</div></div>
+        <div class="hero-stat"><div class="num">2</div><div class="lbl">High-Value Exits</div></div>
+        <div class="hero-stat"><div class="num">8.3x</div><div class="lbl">Record ARR Sale Multiple</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="headshot-wrap"><img src="images/headshot.jpg" alt="Tebe Williams"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal"><div class="slbl">About</div><div class="stitle">Where Finance Meets<br>Intelligent Hardware</div></div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I'm a long-serving SaaS and AI executive with 25 years of experience across software development and intelligent equipment deployment. I've led teams that deployed over <strong>50,000 kiosks and AI-enabled robots worldwide</strong> - products you've encountered in your daily life, from the grocery store and hardware store to the country club.</p>
+      <p>Most of the time, you don't even realize how intelligent the terminal or equipment is - and that's the point. <strong>Game-changing AI products create the consumer experience as it should be</strong>, not as it was or with unnecessary bells and whistles.</p>
+      <p>As CFO, I've guided these companies through two high-value exits - and I know precisely what it takes to build the financial systems, operating models, and strategic plans that transform physical AI concepts into profitable, scalable businesses commanding premium acquisition valuations.</p>
+    </div>
+    <div class="reveal">
+      <div class="hl-card"><h4>🎓 Northwestern Kellogg MBA</h4><p>Finance concentration from one of the world's top business schools</p></div>
+      <div class="hl-card"><h4>🤝 Board & Mentor Experience</h4><p>Board member at Entrepreneur's Organization. Mentor & pitch judge for Future Founders and EO Global Student Entrepreneur Awards.</p></div>
+      <div class="hl-card"><h4>🏗️ Builder-First Operator</h4><p>First to turn the wrench - closing early deals, fixing processes, building models - then building systems that run without heroics.</p></div>
+      <div class="hl-card"><h4>📈 Scaler and Planner for Premium Exits</h4><p>Plan for systems and processes that build a foundation for and allow for 10+ years of reliable execution and solid economics while scaling.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="reveal"><div class="slbl">Core Expertise</div><div class="stitle">What I Bring to the Table</div><div class="ssub" style="white-space:nowrap">Skill set forged across investment banking, management consulting, and hands-on company building in SaaS, robotics and AI.</div></div>
+  <div class="exp-grid">
+    <div class="exp-card reveal"><div class="icon">🤖</div><h3>Physical AI Systems</h3><p>End-to-end experience designing, deploying, and managing robotic and AI-enabled products in edge-of-internet environments with hardware constraints and latency sensitivity.</p></div>
+    <div class="exp-card reveal"><div class="icon">📊</div><h3>Strategic Financial Leadership</h3><p>Capital structure design, equipment financing, financial modeling, and investor communication. Built financial infrastructure from first audit through PE and strategic exits.</p></div>
+    <div class="exp-card reveal"><div class="icon">🚀</div><h3>Scaling Operations</h3><p>Designed operating models with predictable unit economics and org structures that absorb 3–5x growth. Scaled VS Networks from 250 to 20,000+ locations.</p></div>
+    <div class="exp-card reveal"><div class="icon">💰</div><h3>M&A and Exits</h3><p>Led companies through PE and strategic acquisitions. Achieved an 8.3x revenue multiple - the highest ever paid by the acquirer. Background in Deutsche Bank and Lincoln International M&A.</p></div>
+    <div class="exp-card reveal"><div class="icon">🌐</div><h3>Edge & IoT Deployment</h3><p>Architected nationwide deployment of autonomous systems operating 24/7 without field staff. Designed redundant compute, intermittent connectivity solutions, and remote diagnostics.</p></div>
+    <div class="exp-card reveal"><div class="icon">📈</div><h3>Revenue Growth & Retention</h3><p>700% revenue growth with under 1% churn. Moved contracts from monthly to 3-year commitments, building the attrition profile that drove record valuations.</p></div>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- PORTFOLIO / CASE STUDIES -->
+<section id="portfolio">
+  <div class="reveal"><div class="slbl">Portfolio</div><div class="stitle">Products I've Built & Scaled</div><div class="ssub" style="white-space:nowrap">Real products, real deployments, real exits. From autonomous robotics to 50,000-location kiosk networks.</div></div>
+
+  <!-- VOLLEY -->
+  <div class="case-study reveal">
+    <div class="case-hero">
+      <img src="images/volley-action.jpg" alt="Volley trainer on platform tennis court">
+      <div class="case-badge"><span>Physical AI</span><span class="dot"></span><span>Robotics</span><span class="dot"></span><span>Co-Founded</span></div>
+    </div>
+    <div class="case-body">
+      <h3>Volley LLC</h3>
+      <div class="case-role">Co-Founder / CFO - 2020–2026</div>
+      <p>Autonomous AI-enabled robotic training system for racquet sports. Volley uses computer vision to map the court, identify the player, and track the ball in real time - making split-second reactive decisions to give players live-play training scenarios on their own time.</p>
+      <p>Designed the edge computing architecture to run redundant high-processing compute systems within each trainer, with data flowing through intermittent, low-bandwidth cloud connections. Customers don't perceive a difference between Volley and cloud-based AI systems.</p>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="val">150+</div><div class="desc">Installations Nationwide</div></div>
+        <div class="case-metric"><div class="val">10K</div><div class="desc">Active Customers</div></div>
+        <div class="case-metric"><div class="val">24/7</div><div class="desc">Autonomous Operation</div></div>
+        <div class="case-metric"><div class="val">0</div><div class="desc">On-Site Staff Required</div></div>
+      </div>
+    </div>
+    <div class="case-gallery">
+      <img src="images/volley-cv.jpg" alt="Volley computer vision court mapping">
+      <img src="images/volley-pickleball.jpg" alt="Volley pickleball trainer">
+      <img src="images/volley-padel.jpg" alt="Volley on padel court with city skyline">
+    </div>
+  </div>
+
+  <!-- VS NETWORKS -->
+  <div class="case-study reveal">
+    <div class="case-hero">
+      <img src="images/outerwall-kiosks.jpg" alt="Coinstar Redbox ecoATM kiosks">
+      <div class="case-badge"><span>SaaS</span><span class="dot"></span><span>Data Platform</span><span class="dot"></span><span>Acquired 2x</span></div>
+    </div>
+    <div class="case-body">
+      <h3>VS Networks LLC</h3>
+      <div class="case-role">COO / CFO - 2015–2021</div>
+      <p>In-store digital kiosk network providing interactive sales tools, product catalog touchscreens, and critical data collection for major brands (John Deere, STIHL, Ace Hardware, AGCO) across 20,000+ retail locations nationwide.</p>
+      <p>Transformed VS Networks from a single-client side business into a diversified, data-centric platform. Built the sales, customer success, tech support, and HR departments from scratch. Drove 700% revenue growth with under 1% customer churn - the attrition profile that buyers directly credited for the record acquisition multiple.</p>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="val">8.3x</div><div class="desc">Record ARR Sale Multiple</div></div>
+        <div class="case-metric"><div class="val">44%</div><div class="desc">IRR to Investors</div></div>
+        <div class="case-metric"><div class="val">20K+</div><div class="desc">Kiosk Locations</div></div>
+        <div class="case-metric"><div class="val">&lt;1%</div><div class="desc">Customer Churn</div></div>
+      </div>
+    </div>
+    <div class="case-gallery">
+      <img src="images/redbox.jpg" alt="Redbox kiosk in store">
+      <img src="images/ecoatm.jpg" alt="ecoATM kiosk">
+      <img src="images/volley-night.jpg" alt="Volley trainer at night on court">
+    </div>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- CAREER TIMELINE -->
+<section id="career">
+  <div class="reveal"><div class="slbl">Career Arc</div><div class="stitle">Built for This Moment</div><div class="ssub" style="white-space:nowrap">From investment banking and consulting to hands-on company building in robotics and AI.</div></div>
+  <div class="timeline reveal">
+    <div class="tl-item"><div class="tl-date">2020 – 2026</div><div class="tl-co">Volley LLC</div><div class="tl-role">Co-Founder / CFO → Advisor</div><div class="tl-desc">Autonomous AI robotic training system. Scaled from prototype to 150+ nationwide installations with 10,000 customers.</div><div class="tl-badge">Physical AI · Robotics · Edge Computing</div></div>
+    <div class="tl-item"><div class="tl-date">2020 – 2021</div><div class="tl-co">Superior Tech Inc</div><div class="tl-role">COO / CFO</div><div class="tl-desc">Robotics-driven agritech. Led through acquisition by Agri-Fab, exceeding revenue targets at 125%.</div><div class="tl-badge">Acquired · 18% IRR</div></div>
+    <div class="tl-item"><div class="tl-date">2015 – 2021</div><div class="tl-co">VS Networks LLC</div><div class="tl-role">COO / CFO</div><div class="tl-desc">In-store digital kiosk network. 1 client → 12+, 250 → 20,000+ locations, acquirer's highest-ever revenue multiple.</div><div class="tl-badge">Acquired 2x · 44% IRR · 8.3x Multiple</div></div>
+    <div class="tl-item"><div class="tl-date">2011 – 2015</div><div class="tl-co">Outerwall (Redbox & Coinstar)</div><div class="tl-role">Sr. Manager, Strategy & New Ventures</div><div class="tl-desc">Led $150M Coinstar expansion across continental Europe. Coinstar Europe is now 40% of company revenues.</div></div>
+    <div class="tl-item past"><div class="tl-date">2001 – 2011</div><div class="tl-co">Finance & Advisory Foundation</div><div class="tl-role">Ernst & Young · Lincoln International · Deutsche Bank · Accenture</div><div class="tl-desc">Deep expertise in M&A, operational transactions, management consulting, and financial analysis.</div></div>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- CONSULTING -->
+<section id="consulting">
+  <div class="reveal"><div class="slbl">Consulting Services</div><div class="stitle">Physical AI Advisory</div><div class="ssub">As you build your first AI products for the real world, I help you plan the journey right - from concept through deployment to scale.</div></div>
+  <div class="con-grid">
+    <div class="con-card reveal"><div class="num">01</div><h3>Physical AI Due Diligence</h3><p>Evaluating whether your product is ready for AI augmentation. Ensuring goals, form factor, power, and performance accuracy align before you invest.</p><div class="tags"><span class="tag">Form Factor</span><span class="tag">Power Distribution</span><span class="tag">Service Accuracy</span><span class="tag">Product-Market Fit</span></div></div>
+    <div class="con-card reveal"><div class="num">02</div><h3>Strategic Planning & Modeling</h3><p>Financial models, cost projections, and board-ready materials to capture benefits and communicate tradeoffs of Physical AI investment.</p><div class="tags"><span class="tag">R&D Costing</span><span class="tag">Timeline Planning</span><span class="tag">Financial Modeling</span><span class="tag">Board Communication</span></div></div>
+    <div class="con-card reveal"><div class="num">03</div><h3>Equipment Financing</h3><p>Turning CAPEX into growth leverage. Financing packages that let you deploy without dilutive equity raises - including lender introductions and cashflow modeling.</p><div class="tags"><span class="tag">BOM & Unit Econ</span><span class="tag">Cashflow Modeling</span><span class="tag">Financing Packages</span><span class="tag">Lender Intros</span></div></div>
+    <div class="con-card reveal"><div class="num">04</div><h3>Field Ops & Customer Success</h3><p>Designing support systems, diagnostics, customer success strategies, and contracting frameworks before uptime becomes a problem.</p><div class="tags"><span class="tag">Diagnostics</span><span class="tag">Field Support</span><span class="tag">Customer Success</span><span class="tag">AI Bot Support</span></div></div>
+  </div>
+  <div class="con-cta reveal">
+    <h3>Ready to Build Something Intelligent?</h3>
+    <p>Whether you're evaluating a Physical AI concept or scaling a nationwide deployment, I can help navigate the financial and operational complexity.</p>
+    <a href="mailto:tebe.williams@gmail.com?subject=Physical AI Consulting Inquiry" class="btn-g">Start a Conversation →</a>
+  </div>
+</section>
+
+<!-- INSIGHTS SECTION - commented out, restore by removing these comment tags
+<div class="divider"><hr></div>
+
+<section id="insights">
+  <div class="reveal"><div class="slbl">Perspectives</div><div class="stitle">Thought Leadership</div><div class="ssub">Perspectives on Physical AI, scaling operations, and the CFO's evolving role in technology companies.</div></div>
+  <div class="ins-grid">
+    <div class="ins-card reveal">
+      <div class="card-img"><img src="images/volley-cv.jpg" alt=""></div>
+      <div class="card-body"><div class="card-tag">Physical AI</div><h3>Why Edge Computing Changes the CFO's Playbook</h3><p>When your product lives at the edge of the internet, every financial assumption about support, uptime, and unit economics needs rethinking.</p></div>
+    </div>
+    <div class="ins-card reveal">
+      <div class="card-img"><img src="images/volley-sunset.jpg" alt=""></div>
+      <div class="card-body"><div class="card-tag">Scaling</div><h3>Equipment Financing as a Growth Lever</h3><p>How to turn capital-intensive hardware deployment into a competitive advantage using creative financing instead of equity dilution.</p></div>
+    </div>
+    <div class="ins-card reveal">
+      <div class="card-img"><img src="images/volley-player.jpg" alt=""></div>
+      <div class="card-body"><div class="card-tag">Operations</div><h3>Building for &lt;1% Churn Before Exit</h3><p>Customer attrition isn't just a metric - it's the single largest value driver in diligence. How disciplined customer success drives premium multiples.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+-->
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="reveal"><div class="slbl">Contact</div><div class="stitle">Let's Talk</div><div class="ssub" style="margin:0 auto 1.5rem;white-space:nowrap">Available for board advisory, Physical AI consulting, and select leadership opportunities.</div></div>
+  <div class="contact-grid reveal">
+    <div class="contact-card"><div class="ci">✉️</div><h4>Email</h4><a href="mailto:tebe.williams@gmail.com">tebe.williams@gmail.com</a></div>
+    <div class="contact-card"><div class="ci">📞</div><h4>Phone</h4><a href="tel:630-235-2273">630-235-2273</a></div>
+    <div class="contact-card"><div class="ci">💼</div><h4>LinkedIn</h4><a href="https://linkedin.com/in/tebewilliams" target="_blank">Connect on LinkedIn</a></div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl"><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#portfolio">Portfolio</a><a href="#consulting">Consulting</a><!-- <a href="#insights">Insights</a> --><a href="#contact">Contact</a></div>
+  <p>© 2026 James Tebe Williams. All rights reserved.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  const toggle=document.querySelector('.nav-toggle');
+  const navMenu=document.querySelector('nav ul');
+  toggle.addEventListener('click',()=>navMenu.classList.toggle('open'));
+  document.addEventListener('click',e=>{if(!e.target.closest('nav'))navMenu.classList.remove('open')});
+});
+window.addEventListener('scroll',()=>{const n=document.querySelector('nav');n.style.background=window.scrollY>60?'rgba(244,246,251,0.97)':'rgba(244,246,251,0.92)';n.style.boxShadow=window.scrollY>60?'0 2px 12px rgba(0,0,0,.06)':'none'});
+</script>
+</body>
+</html>
