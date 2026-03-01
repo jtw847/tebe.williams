@@ -83,6 +83,8 @@ section{padding:6rem 3rem;max-width:1300px;margin:0 auto}
 .case-study{background:var(--bg2);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-bottom:2.5rem;box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .case-hero{position:relative;height:360px;overflow:hidden}
 .case-hero img{width:100%;height:100%;object-fit:cover}
+.case-hero-collage{display:flex;width:100%;height:100%;gap:2px}
+.case-hero-collage img{flex:1;width:0;height:100%;object-fit:cover}
 .case-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg2) 0%,transparent 60%)}
 .case-hero .case-badge{position:absolute;top:0;left:0;right:0;z-index:2;padding:.7rem 2rem;background:rgba(17,24,39,.6);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.1);font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#fff;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:.6rem}
 .case-hero .case-badge .dot{width:4px;height:4px;border-radius:50%;background:var(--cyan);flex-shrink:0}
@@ -287,7 +289,11 @@ footer .fl a:hover{color:var(--cyan)}
   <!-- VOLLEY -->
   <div class="case-study reveal">
     <div class="case-hero">
-      <img src="images/volley-action.jpg" alt="Volley trainer on platform tennis court">
+      <div class="case-hero-collage">
+        <img src="images/Volley_Header_Image1.jpg" alt="Volley">
+        <img src="images/Volley_Header_Image2.png?v=2" alt="Volley" style="height:130%;align-self:flex-start;object-fit:cover;object-position:top center;">
+        <img src="images/Volley_Header_Image3.png" alt="Volley">
+      </div>
       <div class="case-badge"><span>Physical AI</span><span class="dot"></span><span>Robotics</span><span class="dot"></span><span>Co-Founded</span></div>
     </div>
     <div class="case-body">
