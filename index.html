@@ -44,7 +44,7 @@ nav ul a:hover{color:var(--txt)}nav ul a:hover::after{width:100%}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(244,246,251,.94) 0%,rgba(244,246,251,.70) 50%,rgba(244,246,251,.94) 100%)}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.04) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at 50% 40%,black 20%,transparent 70%);z-index:1}
 .hero-content{max-width:1300px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.2fr .8fr;gap:4rem;align-items:center;position:relative;z-index:2}
-.hero-text h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.6rem,4.8vw,4rem);font-weight:700;line-height:1.08;letter-spacing:-.03em;margin-bottom:1.3rem}
+.hero-text h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.6rem,4.8vw,4rem);font-weight:700;line-height:1.08;letter-spacing:-.03em;margin-bottom:1.3rem;text-wrap:balance}
 .hero-text h1 .hl{background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-text .tagline{font-size:1.08rem;color:var(--txt2);max-width:520px;margin-bottom:1.8rem;line-height:1.8}
 .hero-cta{display:flex;gap:1rem;margin-bottom:2.5rem}
@@ -66,7 +66,7 @@ section{padding:6rem 3rem;max-width:1300px;margin:0 auto}
 .slbl{font-family:'JetBrains Mono',monospace;font-size:1.08rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.8rem;display:flex;align-items:center;gap:.75rem}
 .slbl::before{content:'';width:36px;height:2px;background:var(--cyan)}
 .stitle{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,3.2vw,2.6rem);font-weight:700;letter-spacing:-.02em;margin-bottom:1rem;line-height:1.2}
-.ssub{color:var(--txt2);font-size:1rem;max-width:600px;margin-bottom:2.5rem}
+.ssub{color:var(--txt2);font-size:1rem;margin-bottom:2.5rem}
 .divider{max-width:1300px;margin:0 auto;padding:0 3rem}
 .divider hr{border:none;height:1px;background:var(--border)}
 
@@ -85,6 +85,8 @@ section{padding:6rem 3rem;max-width:1300px;margin:0 auto}
 .case-hero img{width:100%;height:100%;object-fit:cover}
 .case-hero-collage{display:flex;width:100%;height:100%;gap:2px}
 .case-hero-collage img{flex:1;width:0;height:100%;object-fit:cover}
+.case-hero-collage picture{flex:1;display:flex}
+.case-hero-collage picture img{flex:1;width:100%;height:100%}
 .case-hero-collage.contain-imgs{background:#fff}
 .case-hero-collage.contain-imgs img{object-fit:contain;background:#fff;padding:2.5rem .5rem}
 .vsn-hero{display:flex;align-items:stretch}
@@ -107,6 +109,9 @@ section{padding:6rem 3rem;max-width:1300px;margin:0 auto}
 .case-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;padding:0 2.5rem 2.5rem}
 .case-gallery img{width:100%;height:160px;object-fit:cover;border-radius:8px;border:1px solid var(--border);transition:all .3s;cursor:pointer}
 .case-gallery img:hover{border-color:rgba(45,125,82,.3);transform:scale(1.02)}
+
+.volley-img2{height:130%;align-self:flex-start;object-fit:cover;object-position:top center}
+.outerwall-img2{object-fit:contain;object-position:center bottom;padding-top:2.5rem}
 
 /* EXPERTISE */
 .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
@@ -204,10 +209,34 @@ footer .fl a:hover{color:var(--cyan)}
   section{padding:3.5rem 1.2rem}
   .hero{padding:5rem 1.2rem 2.5rem}
   .hero-stats{flex-direction:column;gap:.8rem;align-items:center}
+  .hero-cta{flex-direction:column;align-items:center}
+  .btn-p,.btn-s,.btn-g{min-height:44px;width:100%;justify-content:center}
+  .headshot-wrap{width:200px;height:250px}
   .exp-grid{grid-template-columns:1fr}
-  .case-hero{height:220px}
+  .case-hero{height:auto;min-height:200px;display:flex;flex-direction:column}
+  .collage-side{display:none}
+  .collage-main{width:100%;height:100%;object-fit:cover}
+  .contain-imgs .collage-main{padding-top:0!important;object-fit:contain}
+  .outerwall-img2{object-fit:cover!important;object-position:center 15%;padding:0!important;height:300px;background:#fff}
+  .volley-img2{height:100%;align-self:stretch}
+  .vsn-hero{flex-direction:column}
+  .vsn-logos{display:none}
+  .vsn-center{height:220px}
   .case-gallery{grid-template-columns:1fr;padding:0 1.5rem 1.5rem}
   .case-body{padding:1.5rem}
+  .case-metrics{flex-direction:column;gap:1rem}
+  .case-hero .case-badge{flex-wrap:wrap;padding:.7rem 1.2rem;position:relative;order:-1}
+  .con-card .num{font-size:2rem}
+  footer{padding:2rem 1.2rem}
+  footer .fl{flex-wrap:wrap;gap:1rem}
+}
+@media(max-width:480px){
+  .hero-stat .num{font-size:1.5rem}
+  .hero-stats{gap:.5rem}
+  .case-hero{min-height:160px}
+  .vsn-center{height:180px}
+  .con-card{padding:1.5rem}
+  .contact-card{padding:1.2rem}
 }
 </style>
 </head>
@@ -258,7 +287,7 @@ footer .fl a:hover{color:var(--cyan)}
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="reveal"><div class="slbl">About</div><div class="stitle">Where Finance Meets<br>Intelligent Hardware</div></div>
+  <div class="reveal"><div class="slbl">About</div><div class="stitle">Where Finance Meets Intelligent Hardware</div></div>
   <div class="about-grid">
     <div class="about-text reveal">
       <p>I'm a long-serving SaaS and AI executive with 25 years of experience across software development and intelligent equipment deployment. I've led teams that deployed over <strong>50,000 kiosks and AI-enabled robots worldwide</strong> - products you've encountered in your daily life, from the grocery store and hardware store to the country club.</p>
@@ -278,11 +307,11 @@ footer .fl a:hover{color:var(--cyan)}
 
 <!-- EXPERTISE -->
 <section id="expertise">
-  <div class="reveal"><div class="slbl">Core Expertise</div><div class="stitle">What I Bring to the Table</div><div class="ssub" style="white-space:nowrap">Skill set forged across investment banking, management consulting, and hands-on company building in SaaS, robotics and AI.</div></div>
+  <div class="reveal"><div class="slbl">Core Expertise</div><div class="stitle">What I Bring to the Table</div><div class="ssub">Skill set forged across investment banking, management consulting, and hands-on company building in SaaS, robotics and AI.</div></div>
   <div class="exp-grid">
     <div class="exp-card reveal"><div class="icon">🤖</div><h3>Physical AI Systems</h3><p>End-to-end experience designing, deploying, and managing robotic and AI-enabled products in edge-of-internet environments with hardware constraints and latency sensitivity.</p></div>
     <div class="exp-card reveal"><div class="icon">📊</div><h3>Strategic Financial Leadership</h3><p>Capital structure design, equipment financing, financial modeling, and investor communication. Built financial infrastructure from first audit through PE and strategic exits.</p></div>
-    <div class="exp-card reveal"><div class="icon">🚀</div><h3>Scaling Operations</h3><p>Designed operating models with predictable unit economics and org structures that absorb 3–5x growth. Scaled VS Networks from 250 to 20,000+ locations.</p></div>
+    <div class="exp-card reveal"><div class="icon">🚀</div><h3>Scaling Operations</h3><p>Designed operating models with predictable unit economics and org structures that absorb minimum 10x growth. Scaled VS Networks from 250 to 20,000+ locations.</p></div>
     <div class="exp-card reveal"><div class="icon">💰</div><h3>M&A and Exits</h3><p>Led companies through PE and strategic acquisitions. Achieved an 8.3x revenue multiple - the highest ever paid by the acquirer. Background in Deutsche Bank and Lincoln International M&A.</p></div>
     <div class="exp-card reveal"><div class="icon">🌐</div><h3>Edge & IoT Deployment</h3><p>Architected nationwide deployment of autonomous systems operating 24/7 without field staff. Designed redundant compute, intermittent connectivity solutions, and remote diagnostics.</p></div>
     <div class="exp-card reveal"><div class="icon">📈</div><h3>Revenue Growth & Retention</h3><p>700% revenue growth with under 1% churn. Moved contracts from monthly to 3-year commitments, building the attrition profile that drove record valuations.</p></div>
@@ -293,15 +322,15 @@ footer .fl a:hover{color:var(--cyan)}
 
 <!-- PORTFOLIO / CASE STUDIES -->
 <section id="portfolio">
-  <div class="reveal"><div class="slbl">Portfolio</div><div class="stitle">Products I've Built & Scaled</div><div class="ssub" style="white-space:nowrap">Real products, real deployments, real exits. From autonomous robotics to 50,000-location kiosk networks.</div></div>
+  <div class="reveal"><div class="slbl">Portfolio</div><div class="stitle">Products I've Built & Scaled</div><div class="ssub">Real products, real deployments, real exits. From autonomous robotics to 50,000-location kiosk networks.</div></div>
 
   <!-- VOLLEY -->
   <div class="case-study reveal">
     <div class="case-hero">
       <div class="case-hero-collage">
-        <img src="images/Volley_Header_Image1.jpg" alt="Volley">
-        <img src="images/Volley_Header_Image2.png?v=2" alt="Volley" style="height:130%;align-self:flex-start;object-fit:cover;object-position:top center;">
-        <img src="images/Volley_Header_Image3.png" alt="Volley">
+        <img src="images/Volley_Header_Image1.jpg" alt="Volley" class="collage-side">
+        <img src="images/Volley_Header_Image2.png?v=2" alt="Volley" class="volley-img2 collage-main">
+        <img src="images/Volley_Header_Image3.png" alt="Volley" class="collage-side">
       </div>
       <div class="case-badge"><span>Physical AI</span><span class="dot"></span><span>Robotics</span><span class="dot"></span><span>Co-Founder</span></div>
     </div>
@@ -311,8 +340,8 @@ footer .fl a:hover{color:var(--cyan)}
       <p>Autonomous AI-enabled robotic training system for racquet sports. Volley uses computer vision to map the court, identify the player, and track the ball in real time - making split-second reactive decisions to give players live-play training scenarios on their own time.</p>
       <p>Designed the edge computing architecture to run redundant high-processing compute systems within each trainer, with data flowing through intermittent, low-bandwidth cloud connections. Customers don't perceive a difference between Volley and cloud-based AI systems.</p>
       <div class="case-metrics">
-        <div class="case-metric"><div class="val">150+</div><div class="desc">Installations Nationwide</div></div>
-        <div class="case-metric"><div class="val">10K</div><div class="desc">Active Customers</div></div>
+        <div class="case-metric"><div class="val">200+</div><div class="desc">Installations Nationwide</div></div>
+        <div class="case-metric"><div class="val">15K</div><div class="desc">Active Customers</div></div>
         <div class="case-metric"><div class="val">24/7</div><div class="desc">Autonomous Operation</div></div>
         <div class="case-metric"><div class="val">0</div><div class="desc">On-Site Staff Required</div></div>
       </div>
@@ -361,7 +390,10 @@ footer .fl a:hover{color:var(--cyan)}
   <div class="case-study reveal">
     <div class="case-hero">
       <div class="case-hero-collage contain-imgs">
-        <img src="images/ST_Header_Image1.png" alt="Superior Tech">
+        <picture>
+          <source media="(max-width:640px)" srcset="images/ST_Header_Image2mobile.jpg">
+          <img src="images/ST_Header_Image1.png" alt="Superior Tech">
+        </picture>
       </div>
       <div class="case-badge"><span>Robotics</span><span class="dot"></span><span>Agritech</span><span class="dot"></span><span>COO</span></div>
     </div>
@@ -383,9 +415,12 @@ footer .fl a:hover{color:var(--cyan)}
   <div class="case-study reveal">
     <div class="case-hero">
       <div class="case-hero-collage contain-imgs">
-        <img src="images/Outerwall_Header_Image1.jpg" alt="Outerwall">
-        <img src="images/Outerwall_Header_Image2.jpg" alt="Outerwall" style="padding-top:3.5rem;">
-        <img src="images/Outerwall_Header_Image3.jpg" alt="Outerwall">
+        <img src="images/Outerwall_Header_Image1.jpg" alt="Outerwall" class="collage-side">
+        <picture class="collage-main">
+          <source media="(max-width:640px)" srcset="images/Outerwall_Header_Image2mobile.jpg">
+          <img src="images/Outerwall_Header_Image2.jpg" alt="Outerwall" class="collage-main outerwall-img2">
+        </picture>
+        <img src="images/Outerwall_Header_Image3.jpg" alt="Outerwall" class="collage-side">
       </div>
       <div class="case-badge"><span>Entertainment</span><span class="dot"></span><span>Distributed Computer Networks</span><span class="dot"></span><span>Sr. Manager, Strategy</span></div>
     </div>
@@ -409,9 +444,9 @@ footer .fl a:hover{color:var(--cyan)}
 
 <!-- CAREER TIMELINE -->
 <section id="career">
-  <div class="reveal"><div class="slbl">Career Arc</div><div class="stitle">Built for This Moment</div><div class="ssub" style="white-space:nowrap">From investment banking and consulting to hands-on company building in SaaS, Robotics and AI.</div></div>
+  <div class="reveal"><div class="slbl">Career Arc</div><div class="stitle">Built for This Moment</div><div class="ssub">From investment banking and consulting to hands-on company building in SaaS, Robotics and AI.</div></div>
   <div class="timeline reveal">
-    <div class="tl-item"><div class="tl-date">2020 – 2026</div><div class="tl-co">Volley LLC</div><div class="tl-role">Co-Founder / CFO → Advisor</div><div class="tl-desc">Autonomous AI robotic training system. Scaled from prototype to 150+ nationwide installations with 10,000 customers.</div><div class="tl-badge">Physical AI · Robotics · Edge Computing</div></div>
+    <div class="tl-item"><div class="tl-date">2020 – 2026</div><div class="tl-co">Volley LLC</div><div class="tl-role">Co-Founder / CFO → Advisor</div><div class="tl-desc">Autonomous AI robotic training system. Scaled from prototype to 200+ nationwide installations with 15,000 customers.</div><div class="tl-badge">Physical AI · Robotics · Edge Computing</div></div>
     <div class="tl-item"><div class="tl-date">2020 – 2021</div><div class="tl-co">Superior Tech Inc</div><div class="tl-role">COO / CFO</div><div class="tl-desc">Robotics-driven agritech. Led through acquisition by Agri-Fab, exceeding revenue targets at 125%.</div><div class="tl-badge">Acquired · 18% IRR</div></div>
     <div class="tl-item"><div class="tl-date">2015 – 2021</div><div class="tl-co">VS Networks LLC</div><div class="tl-role">COO / CFO</div><div class="tl-desc">In-store digital kiosk network. Grew from 1 client to 12+, 250 locations to 20,000+. Sold at highest-ever ARR multiple paid by Acquirer.</div><div class="tl-badge">Acquired · 44% IRR · 8.3x ARR Multiple</div></div>
     <div class="tl-item"><div class="tl-date">2011 – 2015</div><div class="tl-co">Outerwall (Redbox & Coinstar)</div><div class="tl-role">Sr. Manager, Strategy & New Ventures</div><div class="tl-desc">Led $150M Coinstar expansion across continental Europe. Coinstar Europe is now 40% of company revenues.</div></div>
@@ -427,8 +462,8 @@ footer .fl a:hover{color:var(--cyan)}
   <div class="con-grid">
     <div class="con-card reveal"><div class="num">01</div><h3>Physical AI Due Diligence</h3><p>Evaluating whether your product is ready for AI augmentation. Ensuring goals, form factor, power, and performance accuracy align before you invest.</p><div class="tags"><span class="tag">Form Factor</span><span class="tag">Power Distribution</span><span class="tag">Service Accuracy</span><span class="tag">Product-Market Fit</span></div></div>
     <div class="con-card reveal"><div class="num">02</div><h3>Strategic Planning & Modeling</h3><p>Financial models, cost projections, and board-ready materials to capture benefits and communicate tradeoffs of Physical AI investment.</p><div class="tags"><span class="tag">R&D Costing</span><span class="tag">Timeline Planning</span><span class="tag">Financial Modeling</span><span class="tag">Board Communication</span></div></div>
-    <div class="con-card reveal"><div class="num">03</div><h3>Equipment Financing</h3><p>Turning CAPEX into growth leverage. Financing packages that let you deploy without dilutive equity raises - including lender introductions and cashflow modeling.</p><div class="tags"><span class="tag">BOM & Unit Econ</span><span class="tag">Cashflow Modeling</span><span class="tag">Financing Packages</span><span class="tag">Lender Intros</span></div></div>
-    <div class="con-card reveal"><div class="num">04</div><h3>Field Ops & Customer Success</h3><p>Designing support systems, diagnostics, customer success strategies, and contracting frameworks before uptime becomes a problem.</p><div class="tags"><span class="tag">Diagnostics</span><span class="tag">Field Support</span><span class="tag">Customer Success</span><span class="tag">AI Bot Support</span></div></div>
+    <div class="con-card reveal"><div class="num">03</div><h3>Field Ops & Customer Success</h3><p>Designing support systems, diagnostics, customer success strategies, and contracting frameworks before uptime becomes a problem.</p><div class="tags"><span class="tag">Diagnostics</span><span class="tag">Field Support</span><span class="tag">Customer Success</span><span class="tag">AI Bot Support</span></div></div>
+    <div class="con-card reveal"><div class="num">04</div><h3>Equipment Financing</h3><p>Turning CAPEX into growth leverage. Financing packages that let you deploy without dilutive equity raises - including lender introductions and cashflow modeling.</p><div class="tags"><span class="tag">BOM & Unit Econ</span><span class="tag">Cashflow Modeling</span><span class="tag">Financing Packages</span><span class="tag">Lender Intros</span></div></div>
   </div>
   <div class="con-cta reveal">
     <h3>Ready to Build Something Intelligent?</h3>
@@ -463,7 +498,7 @@ footer .fl a:hover{color:var(--cyan)}
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="reveal"><div class="slbl">Contact</div><div class="stitle">Let's Talk</div><div class="ssub" style="margin:0 auto 1.5rem;white-space:nowrap">Available for board advisory, Physical AI consulting, and select leadership opportunities.</div></div>
+  <div class="reveal"><div class="slbl">Contact</div><div class="stitle">Let's Talk</div><div class="ssub" style="margin:0 auto 1.5rem">Available for board advisory, Physical AI consulting, and select leadership opportunities.</div></div>
   <div class="contact-grid reveal">
     <div class="contact-card"><div class="ci">✉️</div><h4>Email</h4><a href="mailto:tebe.williams@gmail.com">tebe.williams@gmail.com</a></div>
     <div class="contact-card"><div class="ci">📞</div><h4>Phone</h4><a href="tel:630-235-2273">630-235-2273</a></div>
