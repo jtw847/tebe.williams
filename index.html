@@ -63,8 +63,8 @@ nav ul a:hover{color:var(--txt)}nav ul a:hover::after{width:100%}
 
 /* SECTIONS */
 section{padding:6rem 3rem;max-width:1300px;margin:0 auto}
-.slbl{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.8rem;display:flex;align-items:center;gap:.75rem}
-.slbl::before{content:'';width:24px;height:1px;background:var(--cyan)}
+.slbl{font-family:'JetBrains Mono',monospace;font-size:1.08rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.8rem;display:flex;align-items:center;gap:.75rem}
+.slbl::before{content:'';width:36px;height:2px;background:var(--cyan)}
 .stitle{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,3.2vw,2.6rem);font-weight:700;letter-spacing:-.02em;margin-bottom:1rem;line-height:1.2}
 .ssub{color:var(--txt2);font-size:1rem;max-width:600px;margin-bottom:2.5rem}
 .divider{max-width:1300px;margin:0 auto;padding:0 3rem}
@@ -85,12 +85,21 @@ section{padding:6rem 3rem;max-width:1300px;margin:0 auto}
 .case-hero img{width:100%;height:100%;object-fit:cover}
 .case-hero-collage{display:flex;width:100%;height:100%;gap:2px}
 .case-hero-collage img{flex:1;width:0;height:100%;object-fit:cover}
-.case-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg2) 0%,transparent 60%)}
+.case-hero-collage.contain-imgs{background:#fff}
+.case-hero-collage.contain-imgs img{object-fit:contain;background:#fff;padding:2.5rem .5rem}
+.vsn-hero{display:flex;align-items:stretch}
+.vsn-hero::after{display:none}
+.vsn-logos{width:25%;flex-shrink:0;background:#fff;display:grid;grid-template-columns:1fr 1fr;align-items:center;justify-items:center;padding:1.5rem;gap:1.2rem}
+.vsn-logos img{width:85%;max-height:64px;object-fit:contain;height:auto}
+.vsn-logos img:last-child:nth-child(odd){grid-column:1/-1;justify-self:center}
+.vsn-center{flex:1;position:relative;overflow:hidden}
+.vsn-center img{width:100%;height:100%;object-fit:cover}
+.case-hero::after{display:none}
 .case-hero .case-badge{position:absolute;top:0;left:0;right:0;z-index:2;padding:.7rem 2rem;background:rgba(17,24,39,.6);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.1);font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#fff;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:.6rem}
 .case-hero .case-badge .dot{width:4px;height:4px;border-radius:50%;background:var(--cyan);flex-shrink:0}
 .case-body{padding:2rem 2.5rem 2.5rem}
 .case-body h3{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:.3rem}
-.case-body .case-role{font-size:.88rem;color:var(--cyan);margin-bottom:1rem;font-weight:500}
+.case-body .case-role{font-size:.88rem;color:var(--cyan);margin-bottom:1rem;font-weight:500;display:flex;align-items:center;gap:.5rem}
 .case-body p{color:var(--txt2);font-size:.92rem;margin-bottom:1.2rem;max-width:700px}
 .case-metrics{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
 .case-metric .val{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
@@ -153,7 +162,7 @@ section{padding:6rem 3rem;max-width:1300px;margin:0 auto}
 
 /* CONTACT */
 #contact{text-align:center}
-.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.5rem}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3rem;margin-top:1.5rem}
 .contact-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.8rem;transition:all .3s;box-shadow:0 1px 4px rgba(0,0,0,.04)}
 .contact-card:hover{border-color:rgba(45,125,82,.25)}
 .contact-card .ci{font-size:1.4rem;margin-bottom:.6rem}
@@ -294,11 +303,11 @@ footer .fl a:hover{color:var(--cyan)}
         <img src="images/Volley_Header_Image2.png?v=2" alt="Volley" style="height:130%;align-self:flex-start;object-fit:cover;object-position:top center;">
         <img src="images/Volley_Header_Image3.png" alt="Volley">
       </div>
-      <div class="case-badge"><span>Physical AI</span><span class="dot"></span><span>Robotics</span><span class="dot"></span><span>Co-Founded</span></div>
+      <div class="case-badge"><span>Physical AI</span><span class="dot"></span><span>Robotics</span><span class="dot"></span><span>Co-Founder</span></div>
     </div>
     <div class="case-body">
       <h3>Volley LLC</h3>
-      <div class="case-role">Co-Founder / CFO - 2020–2026</div>
+      <div class="case-role">Co-Founder / CFO <span class="dot"></span> 2020–2026</div>
       <p>Autonomous AI-enabled robotic training system for racquet sports. Volley uses computer vision to map the court, identify the player, and track the ball in real time - making split-second reactive decisions to give players live-play training scenarios on their own time.</p>
       <p>Designed the edge computing architecture to run redundant high-processing compute systems within each trainer, with data flowing through intermittent, low-bandwidth cloud connections. Customers don't perceive a difference between Volley and cloud-based AI systems.</p>
       <div class="case-metrics">
@@ -308,48 +317,103 @@ footer .fl a:hover{color:var(--cyan)}
         <div class="case-metric"><div class="val">0</div><div class="desc">On-Site Staff Required</div></div>
       </div>
     </div>
-    <div class="case-gallery">
-      <img src="images/volley-cv.jpg" alt="Volley computer vision court mapping">
-      <img src="images/volley-pickleball.jpg" alt="Volley pickleball trainer">
-      <img src="images/volley-padel.jpg" alt="Volley on padel court with city skyline">
-    </div>
   </div>
 
   <!-- VS NETWORKS -->
   <div class="case-study reveal">
-    <div class="case-hero">
-      <img src="images/outerwall-kiosks.jpg" alt="Coinstar Redbox ecoATM kiosks">
-      <div class="case-badge"><span>SaaS</span><span class="dot"></span><span>Data Platform</span><span class="dot"></span><span>Acquired 2x</span></div>
+    <div class="case-hero vsn-hero">
+      <div class="vsn-logos">
+        <img src="images/Logo_AGCO.png" alt="AGCO">
+        <img src="images/Logo_Ace.png" alt="Ace Hardware">
+        <img src="images/Logo_BGE.jpeg" alt="BGE">
+        <img src="images/Logo_Honda.png" alt="Honda">
+        <img src="images/Logo_JD.png" alt="John Deere">
+        <img src="images/Logo_Milwaukee.jpeg" alt="Milwaukee">
+      </div>
+      <div class="vsn-center">
+        <img src="images/VSNetworks_Header_Image1.png" alt="VS Networks">
+      </div>
+      <div class="vsn-logos">
+        <img src="images/Logo_DIB.jpeg" alt="DIB">
+        <img src="images/Logo_Mack.png" alt="Mack">
+        <img src="images/Logo_STIHL.png" alt="STIHL">
+        <img src="images/Logo_TrueValue.png" alt="True Value">
+        <img src="images/Logo_Volvo.png" alt="Volvo">
+        <img src="images/Logo_YETI.jpeg" alt="YETI">
+      </div>
+      <div class="case-badge"><span>SaaS</span><span class="dot"></span><span>Data Platform</span><span class="dot"></span><span>CFO / COO</span></div>
     </div>
     <div class="case-body">
       <h3>VS Networks LLC</h3>
-      <div class="case-role">COO / CFO - 2015–2021</div>
-      <p>In-store digital kiosk network providing interactive sales tools, product catalog touchscreens, and critical data collection for major brands (John Deere, STIHL, Ace Hardware, AGCO) across 20,000+ retail locations nationwide.</p>
+      <div class="case-role">CFO / COO <span class="dot"></span> 2015–2021</div>
+      <p>In-store digital kiosk network providing interactive sales tools, product catalog touchscreens, and critical data collection for major brands across 20,000+ retail locations nationwide.</p>
       <p>Transformed VS Networks from a single-client side business into a diversified, data-centric platform. Built the sales, customer success, tech support, and HR departments from scratch. Drove 700% revenue growth with under 1% customer churn - the attrition profile that buyers directly credited for the record acquisition multiple.</p>
       <div class="case-metrics">
         <div class="case-metric"><div class="val">8.3x</div><div class="desc">Record ARR Sale Multiple</div></div>
-        <div class="case-metric"><div class="val">44%</div><div class="desc">IRR to Investors</div></div>
-        <div class="case-metric"><div class="val">20K+</div><div class="desc">Kiosk Locations</div></div>
+        <div class="case-metric"><div class="val">44%</div><div class="desc">Investor IRR</div></div>
+        <div class="case-metric"><div class="val">20K+</div><div class="desc">Kiosk Deployments</div></div>
         <div class="case-metric"><div class="val">&lt;1%</div><div class="desc">Customer Churn</div></div>
       </div>
     </div>
-    <div class="case-gallery">
-      <img src="images/redbox.jpg" alt="Redbox kiosk in store">
-      <img src="images/ecoatm.jpg" alt="ecoATM kiosk">
-      <img src="images/volley-night.jpg" alt="Volley trainer at night on court">
+  </div>
+
+  <!-- SUPERIOR TECH -->
+  <div class="case-study reveal">
+    <div class="case-hero">
+      <div class="case-hero-collage contain-imgs">
+        <img src="images/ST_Header_Image1.png" alt="Superior Tech">
+      </div>
+      <div class="case-badge"><span>Robotics</span><span class="dot"></span><span>Agritech</span><span class="dot"></span><span>COO</span></div>
+    </div>
+    <div class="case-body">
+      <h3>Superior Tech Inc.</h3>
+      <div class="case-role">COO <span class="dot"></span> 2020–2021</div>
+      <p>Agritech company specializing in robotic sprayers. After an acquisition failure, took over COO role during a new 18-month sale process to drive performance against acquirer set targets.</p>
+      <p>Spearheaded a product development turnaround, reducing launch time from 20 to 6 months. Ensured financial stability during COVID, exceeding revenue forecasts (125% of target). Led the company through acquisition by Agri-Fab, delivering an 18% IRR to investors.</p>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="val">333%</div><div class="desc">Product Launch Acceleration</div></div>
+        <div class="case-metric"><div class="val">125%</div><div class="desc">Revenue to Target</div></div>
+        <div class="case-metric"><div class="val">18%</div><div class="desc">Investor IRR</div></div>
+        <div class="case-metric"><div class="val">5K</div><div class="desc">Annual Unit Production</div></div>
+      </div>
     </div>
   </div>
+
+  <!-- OUTERWALL -->
+  <div class="case-study reveal">
+    <div class="case-hero">
+      <div class="case-hero-collage contain-imgs">
+        <img src="images/Outerwall_Header_Image1.jpg" alt="Outerwall">
+        <img src="images/Outerwall_Header_Image2.jpg" alt="Outerwall" style="padding-top:3.5rem;">
+        <img src="images/Outerwall_Header_Image3.jpg" alt="Outerwall">
+      </div>
+      <div class="case-badge"><span>Entertainment</span><span class="dot"></span><span>Distributed Computer Networks</span><span class="dot"></span><span>Sr. Manager, Strategy</span></div>
+    </div>
+    <div class="case-body">
+      <h3>Outerwall Inc</h3>
+      <div class="case-role">Sr. Manager, Strategy <span class="dot"></span> 2011–2015</div>
+      <p>Outerwall was the holding company for Redbox, Coinstar, ecoATM and several other growth kiosk assets. At the time, OUTR was the most shorted stock on the NASDAQ, given its DVD business. My mandate was driving profit and discovering new revenue opportunities.</p>
+      <p>Led $150M Coinstar expansion across continental Europe. Acted as early-stage General Manager, overseeing recruitment and product to ensure successful market entry. Directed annual planning, aligning five-year strategic plans across holdings to meet board-approved targets.</p>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="val">$1B</div><div class="desc">Strategic Planning Budget</div></div>
+        <div class="case-metric"><div class="val">$150M</div><div class="desc">Direct Revenue Creation</div></div>
+        <div class="case-metric"><div class="val">1x (Continental EU)</div><div class="desc">New Markets Unlocked</div></div>
+        <div class="case-metric"><div class="val">20K+</div><div class="desc">Total Deployments</div></div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <div class="divider"><hr></div>
 
 <!-- CAREER TIMELINE -->
 <section id="career">
-  <div class="reveal"><div class="slbl">Career Arc</div><div class="stitle">Built for This Moment</div><div class="ssub" style="white-space:nowrap">From investment banking and consulting to hands-on company building in robotics and AI.</div></div>
+  <div class="reveal"><div class="slbl">Career Arc</div><div class="stitle">Built for This Moment</div><div class="ssub" style="white-space:nowrap">From investment banking and consulting to hands-on company building in SaaS, Robotics and AI.</div></div>
   <div class="timeline reveal">
     <div class="tl-item"><div class="tl-date">2020 – 2026</div><div class="tl-co">Volley LLC</div><div class="tl-role">Co-Founder / CFO → Advisor</div><div class="tl-desc">Autonomous AI robotic training system. Scaled from prototype to 150+ nationwide installations with 10,000 customers.</div><div class="tl-badge">Physical AI · Robotics · Edge Computing</div></div>
     <div class="tl-item"><div class="tl-date">2020 – 2021</div><div class="tl-co">Superior Tech Inc</div><div class="tl-role">COO / CFO</div><div class="tl-desc">Robotics-driven agritech. Led through acquisition by Agri-Fab, exceeding revenue targets at 125%.</div><div class="tl-badge">Acquired · 18% IRR</div></div>
-    <div class="tl-item"><div class="tl-date">2015 – 2021</div><div class="tl-co">VS Networks LLC</div><div class="tl-role">COO / CFO</div><div class="tl-desc">In-store digital kiosk network. 1 client → 12+, 250 → 20,000+ locations, acquirer's highest-ever revenue multiple.</div><div class="tl-badge">Acquired 2x · 44% IRR · 8.3x Multiple</div></div>
+    <div class="tl-item"><div class="tl-date">2015 – 2021</div><div class="tl-co">VS Networks LLC</div><div class="tl-role">COO / CFO</div><div class="tl-desc">In-store digital kiosk network. Grew from 1 client to 12+, 250 locations to 20,000+. Sold at highest-ever ARR multiple paid by Acquirer.</div><div class="tl-badge">Acquired · 44% IRR · 8.3x ARR Multiple</div></div>
     <div class="tl-item"><div class="tl-date">2011 – 2015</div><div class="tl-co">Outerwall (Redbox & Coinstar)</div><div class="tl-role">Sr. Manager, Strategy & New Ventures</div><div class="tl-desc">Led $150M Coinstar expansion across continental Europe. Coinstar Europe is now 40% of company revenues.</div></div>
     <div class="tl-item past"><div class="tl-date">2001 – 2011</div><div class="tl-co">Finance & Advisory Foundation</div><div class="tl-role">Ernst & Young · Lincoln International · Deutsche Bank · Accenture</div><div class="tl-desc">Deep expertise in M&A, operational transactions, management consulting, and financial analysis.</div></div>
   </div>
@@ -404,6 +468,7 @@ footer .fl a:hover{color:var(--cyan)}
     <div class="contact-card"><div class="ci">✉️</div><h4>Email</h4><a href="mailto:tebe.williams@gmail.com">tebe.williams@gmail.com</a></div>
     <div class="contact-card"><div class="ci">📞</div><h4>Phone</h4><a href="tel:630-235-2273">630-235-2273</a></div>
     <div class="contact-card"><div class="ci">💼</div><h4>LinkedIn</h4><a href="https://linkedin.com/in/tebewilliams" target="_blank">Connect on LinkedIn</a></div>
+    <div class="contact-card"><div class="ci">📅</div><h4>Calendar</h4><a href="https://calendar.app.google/2JeV7HLpkYjdXWMU6" target="_blank">Schedule a Meeting</a></div>
   </div>
 
 </section>
