@@ -30,7 +30,9 @@ nav .logo span{color:var(--cyan)}
 nav .back{color:var(--txt2);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .3s;display:flex;align-items:center;gap:.4rem}
 nav .back:hover{color:var(--cyan)}
 
-.article{max-width:720px;margin:0 auto;padding:7rem 2rem 4rem}
+.article-hero{max-width:720px;margin:0 auto;padding:7rem 2rem 0}
+.article-hero img{width:100%;border-radius:12px;display:block}
+.article{max-width:720px;margin:0 auto;padding:2rem 2rem 4rem}
 .article-tag{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.8rem;display:flex;align-items:center;gap:.75rem}
 .article-tag::before{content:'';width:36px;height:2px;background:var(--cyan)}
 .article h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem;text-wrap:balance}
@@ -61,7 +63,8 @@ footer .fl a:hover{color:var(--cyan)}
 
 @media(max-width:640px){
   nav{padding:.8rem 1.2rem}
-  .article{padding:5rem 1.2rem 3rem}
+  .article-hero{padding:5rem 1.2rem 0}
+  .article{padding:1.5rem 1.2rem 3rem}
   .article-footer{padding:0 1.2rem 3rem}
   .subscribe-form{flex-direction:column;align-items:stretch}
   .subscribe-form .form-group{width:100%}
@@ -78,6 +81,10 @@ footer .fl a:hover{color:var(--cyan)}
   <a href="../index.html" class="logo">tebe<span>.</span>williams</a>
   <a href="../index.html#articles" class="back">&larr; All Articles</a>
 </nav>
+
+<div class="article-hero">
+  <img src="../images/ButtonImage_EquipmentFinancing.jpg" alt="Equipment Financing as a Growth Lever">
+</div>
 
 <article class="article">
   <div class="article-tag">The CFO's Lens</div>
