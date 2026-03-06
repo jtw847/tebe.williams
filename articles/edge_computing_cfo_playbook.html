@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Edge Computing Changes the CFO's Playbook - Tebe Williams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #f4f6fb;
+  --bg2:       #e9ecf4;
+  --bg-card:   #ffffff;
+  --cyan:      #2d7d52;
+  --blue:      #1e3a8a;
+  --gold:      #c47a0a;
+  --txt:       #111827;
+  --txt2:      #4b5563;
+  --muted:     #6b7280;
+  --border:    #c5cad8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(244,246,251,0.92);border-bottom:1px solid rgba(0,0,0,0.08)}
+nav .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:-.02em;text-decoration:none;color:var(--txt)}
+nav .logo span{color:var(--cyan)}
+nav .back{color:var(--txt2);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .3s;display:flex;align-items:center;gap:.4rem}
+nav .back:hover{color:var(--cyan)}
+
+.article{max-width:720px;margin:0 auto;padding:7rem 2rem 4rem}
+.article-tag{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.8rem;display:flex;align-items:center;gap:.75rem}
+.article-tag::before{content:'';width:36px;height:2px;background:var(--cyan)}
+.article h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem;text-wrap:balance}
+.article .byline{font-size:.85rem;color:var(--muted);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.article h2{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:-.01em;margin:2.5rem 0 .8rem;color:var(--txt)}
+.article p{color:var(--txt2);font-size:1rem;margin-bottom:1.4rem;line-height:1.85}
+.article p strong{color:var(--txt)}
+.article .pullquote{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:600;color:var(--txt);border-left:3px solid var(--cyan);padding-left:1.2rem;margin:2rem 0;line-height:1.5}
+
+.article-footer{max-width:720px;margin:0 auto;padding:0 2rem 4rem}
+.article-footer .subscribe-inline{padding:2rem;background:linear-gradient(135deg,rgba(45,125,82,.04),rgba(30,58,138,.04));border:1px solid rgba(45,125,82,.12);border-radius:14px;text-align:center}
+.article-footer .subscribe-inline h3{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:600;margin-bottom:.3rem}
+.article-footer .subscribe-inline p{font-size:.88rem;color:var(--txt2);margin-bottom:1rem}
+.subscribe-form{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;align-items:flex-end}
+.subscribe-form .form-group{display:flex;flex-direction:column;text-align:left}
+.subscribe-form .form-group label{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;font-family:'JetBrains Mono',monospace}
+.subscribe-form input{padding:.6rem 1rem;border:1px solid var(--border);border-radius:8px;font-size:.85rem;font-family:'DM Sans',sans-serif;background:var(--bg-card);color:var(--txt);transition:border-color .3s;min-width:180px}
+.subscribe-form input:focus{outline:none;border-color:var(--cyan)}
+.subscribe-form input::placeholder{color:var(--muted)}
+.btn-p{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.8rem;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;border-radius:8px;transition:all .3s;border:none;cursor:pointer;white-space:nowrap}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(45,125,82,.3)}
+
+footer{padding:2.5rem 3rem;text-align:center;border-top:1px solid var(--border)}
+footer p{font-size:.75rem;color:var(--muted)}
+footer .fl{display:flex;justify-content:center;gap:2rem;margin-bottom:.8rem}
+footer .fl a{color:var(--txt2);text-decoration:none;font-size:.78rem;transition:color .3s}
+footer .fl a:hover{color:var(--cyan)}
+
+@media(max-width:640px){
+  nav{padding:.8rem 1.2rem}
+  .article{padding:5rem 1.2rem 3rem}
+  .article-footer{padding:0 1.2rem 3rem}
+  .subscribe-form{flex-direction:column;align-items:stretch}
+  .subscribe-form .form-group{width:100%}
+  .subscribe-form input{min-width:0;width:100%}
+  .btn-p{width:100%;justify-content:center;min-height:44px}
+  footer{padding:2rem 1.2rem}
+  footer .fl{flex-wrap:wrap;gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">tebe<span>.</span>williams</a>
+  <a href="../index.html#articles" class="back">&larr; All Articles</a>
+</nav>
+
+<article class="article">
+  <div class="article-tag">The CFO's Lens</div>
+  <h1>Why Edge Computing Changes the CFO's Playbook</h1>
+  <div class="byline">Tebe Williams &middot; March 2026</div>
+
+  <p>Every CFO has been trained to love the cloud. Pay as you go. No hardware to depreciate. Scale up when you need it, scale down when you don't. It is an elegant model, and for most of the last decade it has been the right answer.</p>
+  <div class="pullquote">Physical AI is quietly exposing an assumption buried inside it.</div>
+
+  <h2>The Assumption</h2>
+  <p>Cloud computing works on a simple principle: Send your data somewhere, wait for a response, act on the result. For software that lives on a screen, that process is effectively invisible. A fraction of a second. Imperceptible.</p>
+  <p>For a robotic arm on a factory floor, that fraction of a second is a safety incident.</p>
+  <p>For a warehouse robot navigating a live environment, it is a collision.</p>
+  <p>For a piece of equipment on a remote energy site, it is a compliance failure.</p>
+  <div class="pullquote">The cloud assumes that waiting is acceptable. Physical AI often cannot afford to wait.</div>
+
+  <h2>What Edge Computing Actually Is</h2>
+  <p>Edge computing moves the processing closer to where the action happens — on the device itself, or on local hardware at the facility — rather than routing everything through a remote server. The system thinks where it stands. It doesn't phone home first.</p>
+  <p>This is not a new concept. What is new is that Physical AI has made it a business-critical one.</p>
+  <p>When machines need to perceive, decide, and act in real time, latency isn't a performance metric. It's a business risk. And the CFO who hasn't updated their model of IT spend for that reality is about to be surprised by the bill.</p>
+
+  <h2>What Changes on the Balance Sheet</h2>
+  <p>Cloud-first thinking trained finance teams to think in operating expenditure. No capital commitments, no depreciating hardware, no maintenance contracts. Clean, flexible, predictable.</p>
+  <p>Edge deployments bring physical assets back into the picture. Compute hardware. Local servers. Ruggedized devices built for factory floors and field environments. These require capital planning, depreciation schedules, and procurement cycles that haven't been part of the IT conversation in years.</p>
+  <div class="pullquote">For companies deploying Physical AI at scale, this isn't a rounding error. It is a strategic infrastructure investment — and it needs to be evaluated the way you'd evaluate a facility or a fleet, not the way you'd evaluate a SaaS subscription.</div>
+
+  <h2>The Risk Nobody Is Modeling</h2>
+  <p>There is also a number most cloud ROI calculations skip entirely: The cost of going offline.</p>
+  <p>For a software company, an outage is a bad afternoon. For a company running Physical AI — automated logistics, precision manufacturing, real-time quality control — an outage can stop production. In manufacturing and logistics, unplanned downtime routinely costs tens of thousands of dollars per hour.</p>
+  <p>Edge infrastructure reduces that exposure. A system that can process locally doesn't go dark when the network does. It keeps running. That resilience has real financial value, and a CFO who can quantify it and put it against the cost of edge hardware is making a defensible, data-driven investment case.</p>
+
+  <h2>The Question Worth Asking</h2>
+  <p>The shift to edge isn't about replacing the cloud. Most mature Physical AI deployments run both — edge for real-time decisions, cloud for storage, model training, and analytics. The question isn't which one wins.</p>
+  <div class="pullquote">The question is: Where does each workload actually belong, and are we paying for that correctly?</div>
+  <p>Companies that answer it early will build operations that are faster, more resilient, and better insulated from the bandwidth costs that are quietly inflating cloud bills across every industry that touches the physical world.</p>
+  <p>The CFO who understands edge computing isn't just keeping up with infrastructure. They're pricing risk correctly. In Physical AI, that's the whole game.</p>
+</article>
+
+<div class="article-footer">
+  <div class="subscribe-inline">
+    <h3>Follow me for alerts on new articles.</h3>
+    <p>Get notified when I publish new pieces on Physical AI and the CFO's role in it.</p>
+    <form class="subscribe-form" action="https://formsubmit.co/tebewilliams.ai@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Article Subscriber">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://tebewilliams.ai/articles/edge_computing_cfo_playbook.html">
+      <div class="form-group"><label for="sub-name">Full Name</label><input type="text" name="name" id="sub-name" placeholder="Jane Doe" required></div>
+      <div class="form-group"><label for="sub-email">Email</label><input type="email" name="email" id="sub-email" placeholder="jane@company.com" required></div>
+      <div class="form-group"><label for="sub-company">Company <span style="color:var(--muted);text-transform:none;font-family:'DM Sans',sans-serif">(optional)</span></label><input type="text" name="company" id="sub-company" placeholder="Acme Corp"></div>
+      <button type="submit" class="btn-p">Follow me for alerts on new articles.</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="fl"><a href="../index.html#about">About</a><a href="../index.html#expertise">Expertise</a><a href="../index.html#portfolio">Portfolio</a><a href="../index.html#consulting">Consulting</a><a href="../index.html#articles">Articles</a><a href="../index.html#contact">Contact</a></div>
+  <p>&copy; 2026 James Tebe Williams. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
