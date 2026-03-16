@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're Selling to the Wrong Person - Tebe Williams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #f4f6fb;
+  --bg2:       #e9ecf4;
+  --bg-card:   #ffffff;
+  --cyan:      #2d7d52;
+  --blue:      #1e3a8a;
+  --gold:      #c47a0a;
+  --txt:       #111827;
+  --txt2:      #4b5563;
+  --muted:     #6b7280;
+  --border:    #c5cad8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(244,246,251,0.92);border-bottom:1px solid rgba(0,0,0,0.08)}
+nav .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:-.02em;text-decoration:none;color:var(--txt)}
+nav .logo span{color:var(--cyan)}
+nav .back{color:var(--txt2);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .3s;display:flex;align-items:center;gap:.4rem}
+nav .back:hover{color:var(--cyan)}
+
+.article-hero{max-width:720px;margin:0 auto;padding:7rem 2rem 0}
+.article-hero img{width:100%;max-height:340px;object-fit:cover;border-radius:12px;display:block}
+.article{max-width:720px;margin:0 auto;padding:2rem 2rem 4rem}
+.article-tag{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.8rem;display:flex;align-items:center;gap:.75rem}
+.article-tag::before{content:'';width:36px;height:2px;background:var(--cyan)}
+.article h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem;text-wrap:balance}
+.article .byline{font-size:.85rem;color:var(--muted);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.article h2{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:-.01em;margin:2.5rem 0 .8rem;color:var(--txt)}
+.article p{color:var(--txt2);font-size:1rem;margin-bottom:1.4rem;line-height:1.85}
+.article p strong{color:var(--txt)}
+.article .pullquote{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:600;color:var(--txt);border-left:3px solid var(--cyan);padding-left:1.2rem;margin:2rem 0;line-height:1.5}
+
+.article-footer{max-width:720px;margin:0 auto;padding:0 2rem 4rem}
+.article-footer .subscribe-inline{padding:2rem;background:linear-gradient(135deg,rgba(45,125,82,.04),rgba(30,58,138,.04));border:1px solid rgba(45,125,82,.12);border-radius:14px;text-align:center}
+.article-footer .subscribe-inline h3{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:600;margin-bottom:.3rem}
+.article-footer .subscribe-inline p{font-size:.88rem;color:var(--txt2);margin-bottom:1rem}
+.subscribe-form{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;align-items:flex-end}
+.subscribe-form .form-group{display:flex;flex-direction:column;text-align:left}
+.subscribe-form .form-group label{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;font-family:'JetBrains Mono',monospace}
+.subscribe-form input{padding:.6rem 1rem;border:1px solid var(--border);border-radius:8px;font-size:.85rem;font-family:'DM Sans',sans-serif;background:var(--bg-card);color:var(--txt);transition:border-color .3s;min-width:180px}
+.subscribe-form input:focus{outline:none;border-color:var(--cyan)}
+.subscribe-form input::placeholder{color:var(--muted)}
+.btn-p{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.8rem;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;border-radius:8px;transition:all .3s;border:none;cursor:pointer;white-space:nowrap}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(45,125,82,.3)}
+
+footer{padding:2.5rem 3rem;text-align:center;border-top:1px solid var(--border)}
+footer p{font-size:.75rem;color:var(--muted)}
+footer .fl{display:flex;justify-content:center;gap:2rem;margin-bottom:.8rem}
+footer .fl a{color:var(--txt2);text-decoration:none;font-size:.78rem;transition:color .3s}
+footer .fl a:hover{color:var(--cyan)}
+
+@media(max-width:640px){
+  nav{padding:.8rem 1.2rem}
+  .article-hero{padding:5rem 1.2rem 0}
+  .article{padding:1.5rem 1.2rem 3rem}
+  .article-footer{padding:0 1.2rem 3rem}
+  .subscribe-form{flex-direction:column;align-items:stretch}
+  .subscribe-form .form-group{width:100%}
+  .subscribe-form input{min-width:0;width:100%}
+  .btn-p{width:100%;justify-content:center;min-height:44px}
+  footer{padding:2rem 1.2rem}
+  footer .fl{flex-wrap:wrap;gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">tebe<span>.</span>williams</a>
+  <a href="../index.html#articles" class="back">&larr; All Articles</a>
+</nav>
+
+<div class="article-hero">
+  <img src="../images/ButtonImage_wrong_customer.jpg" alt="You're Selling to the Wrong Person" style="object-fit:contain;max-height:none">
+</div>
+
+<article class="article">
+  <div class="article-tag">The Builder's Lens</div>
+  <h1>You're Selling to the Wrong Person</h1>
+  <div class="byline">Tebe Williams &middot; March 2026</div>
+
+  <p>The first customer is rarely the right customer. Most companies figure this out eventually. The ones that figure it out early are the ones that scale.</p>
+
+  <p>This is not a sales problem. It is a assumptions problem. The founding team builds something for a customer they believe exists, lands the first deal as proof, and then spends the next 18 months wondering why the second deal is so hard. The first customer was real. The theory behind the first customer was not.</p>
+
+  <h2>The Customer You Have Is a Clue, Not a Strategy</h2>
+  <p>Every early-stage company has a first customer. That customer deserves enormous credit. They took a chance on something unproven. They helped you learn what the product actually does in the real world. They may have kept the company alive long enough to figure out the next step.</p>
+  <p>They are not the blueprint.</p>
+  <p>The mistake is treating the first customer as the definition of the market. Building the pitch around them. Hiring the sales team to find more of them. Measuring pipeline against how closely prospects resemble them. That approach works until it doesn't, and when it stops working the team usually blames the sales process before they question the customer definition.</p>
+  <p>The right question is simpler: Who has this problem badly enough to pay to solve it, and are there enough of them to build a company on?</p>
+  <p>The answer is almost never the first customer.</p>
+
+  <h2>The Adjacent Buyer</h2>
+  <p>I have watched this play out more than once. A company launches with a single anchor client, proves the product works, and then stalls. The anchor client is too specific. The replication path is unclear. The sales team is calling the wrong people.</p>
+  <p>In one case, the real market was hiding one step to the left of where everyone was looking. The product solved a problem that existed across an entire category of businesses connected by a single shared characteristic. Once that characteristic was identified, the sales motion changed entirely. The pitch changed. The channel changed. The customer changed. Revenue grew 700% over the next several years. The company sold at a premium multiple. The anchor client that started it all was a single data point in a much larger pattern nobody had looked for yet.</p>
+  <p>The adjacent buyer is almost always there. The founding team is usually too close to the first customer to see them.</p>
+
+  <h2>Physical AI Makes This Harder</h2>
+  <p>In software, pivoting the customer definition is painful but survivable. You rewrite the pitch, retrain the team, update the deck. In Physical AI, the stakes are higher. The product is built for a specific environment, a specific use case, a specific set of operational constraints. Getting the customer wrong means the hardware may need to change, not just the messaging.</p>
+  <p>This is why finding the real buyer early is not a nice-to-have in Physical AI. It is a capital decision. Every dollar spent building for the wrong customer is a dollar that cannot be recovered by changing the slide deck.</p>
+  <p>The time to find the real buyer is before the product is fully built. Not after.</p>
+
+  <h2>How to Find Them</h2>
+  <p>Start with the problem, not the product. Describe the operational outcome the product delivers without mentioning the product at all. Then ask who has that problem badly enough that an unsolved version of it costs them something measurable every day.</p>
+  <p>That person is your real buyer. They may not look like your first customer. They may be in a different industry, a different function, a different part of the country. They will be easier to sell to, faster to close, and more likely to renew.</p>
+  <p>The first customer showed you the product works. The real buyer is the one who shows you the business works. Finding them is the most important sales call you will ever make. Most companies make it two years too late.</p>
+  <p>Your best market is probably one step away from where you are looking. Go look.</p>
+</article>
+
+<div class="article-footer">
+  <div class="subscribe-inline">
+    <h3>Follow me for alerts on new articles.</h3>
+    <p>Get notified when I publish new pieces on Physical AI and the CFO's role in it.</p>
+    <form class="subscribe-form" action="https://formsubmit.co/tebewilliams.ai@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Article Subscriber">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://tebewilliams.ai/articles/wrong_customer.html">
+      <div class="form-group"><label for="sub-name">Full Name</label><input type="text" name="name" id="sub-name" placeholder="Jane Doe" required></div>
+      <div class="form-group"><label for="sub-email">Email</label><input type="email" name="email" id="sub-email" placeholder="jane@company.com" required></div>
+      <div class="form-group"><label for="sub-company">Company <span style="color:var(--muted);text-transform:none;font-family:'DM Sans',sans-serif">(optional)</span></label><input type="text" name="company" id="sub-company" placeholder="Acme Corp"></div>
+      <button type="submit" class="btn-p">Follow me for alerts on new articles.</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="fl"><a href="../index.html#about">About</a><a href="../index.html#expertise">Expertise</a><a href="../index.html#portfolio">Portfolio</a><a href="../index.html#consulting">Consulting</a><a href="../index.html#articles">Articles</a><a href="../index.html#contact">Contact</a></div>
+  <p>&copy; 2026 James Tebe Williams. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
