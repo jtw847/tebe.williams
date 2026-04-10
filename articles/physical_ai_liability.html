@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physical AI Is Deploying Into a Liability Vacuum - Tebe Williams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #f4f6fb;
+  --bg2:       #e9ecf4;
+  --bg-card:   #ffffff;
+  --cyan:      #2d7d52;
+  --blue:      #1e3a8a;
+  --gold:      #c47a0a;
+  --txt:       #111827;
+  --txt2:      #4b5563;
+  --muted:     #6b7280;
+  --border:    #c5cad8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(244,246,251,0.92);border-bottom:1px solid rgba(0,0,0,0.08)}
+nav .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:-.02em;text-decoration:none;color:var(--txt)}
+nav .logo span{color:var(--cyan)}
+nav .back{color:var(--txt2);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .3s;display:flex;align-items:center;gap:.4rem}
+nav .back:hover{color:var(--cyan)}
+
+.article-hero{max-width:720px;margin:0 auto;padding:7rem 2rem 0}
+.article-hero img{width:100%;max-height:340px;object-fit:cover;border-radius:12px;display:block}
+.article{max-width:720px;margin:0 auto;padding:2rem 2rem 4rem}
+.article-tag{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.8rem;display:flex;align-items:center;gap:.75rem}
+.article-tag::before{content:'';width:36px;height:2px;background:var(--cyan)}
+.article h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem;text-wrap:balance}
+.article .byline{font-size:.85rem;color:var(--muted);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.article h2{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:-.01em;margin:2.5rem 0 .8rem;color:var(--txt)}
+.article p{color:var(--txt2);font-size:1rem;margin-bottom:1.4rem;line-height:1.85}
+.article p strong{color:var(--txt)}
+.article .pullquote{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:600;color:var(--txt);border-left:3px solid var(--cyan);padding-left:1.2rem;margin:2rem 0;line-height:1.5}
+
+.article-footer{max-width:720px;margin:0 auto;padding:0 2rem 4rem}
+.article-footer .subscribe-inline{padding:2rem;background:linear-gradient(135deg,rgba(45,125,82,.04),rgba(30,58,138,.04));border:1px solid rgba(45,125,82,.12);border-radius:14px;text-align:center}
+.article-footer .subscribe-inline h3{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:600;margin-bottom:.3rem}
+.article-footer .subscribe-inline p{font-size:.88rem;color:var(--txt2);margin-bottom:1rem}
+.subscribe-form{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;align-items:flex-end}
+.subscribe-form .form-group{display:flex;flex-direction:column;text-align:left}
+.subscribe-form .form-group label{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;font-family:'JetBrains Mono',monospace}
+.subscribe-form input{padding:.6rem 1rem;border:1px solid var(--border);border-radius:8px;font-size:.85rem;font-family:'DM Sans',sans-serif;background:var(--bg-card);color:var(--txt);transition:border-color .3s;min-width:180px}
+.subscribe-form input:focus{outline:none;border-color:var(--cyan)}
+.subscribe-form input::placeholder{color:var(--muted)}
+.btn-p{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.8rem;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;border-radius:8px;transition:all .3s;border:none;cursor:pointer;white-space:nowrap}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(45,125,82,.3)}
+
+footer{padding:2.5rem 3rem;text-align:center;border-top:1px solid var(--border)}
+footer p{font-size:.75rem;color:var(--muted)}
+footer .fl{display:flex;justify-content:center;gap:2rem;margin-bottom:.8rem}
+footer .fl a{color:var(--txt2);text-decoration:none;font-size:.78rem;transition:color .3s}
+footer .fl a:hover{color:var(--cyan)}
+
+@media(max-width:640px){
+  nav{padding:.8rem 1.2rem}
+  .article-hero{padding:5rem 1.2rem 0}
+  .article{padding:1.5rem 1.2rem 3rem}
+  .article-footer{padding:0 1.2rem 3rem}
+  .subscribe-form{flex-direction:column;align-items:stretch}
+  .subscribe-form .form-group{width:100%}
+  .subscribe-form input{min-width:0;width:100%}
+  .btn-p{width:100%;justify-content:center;min-height:44px}
+  footer{padding:2rem 1.2rem}
+  footer .fl{flex-wrap:wrap;gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">tebe<span>.</span>williams</a>
+  <a href="../index.html#articles" class="back">&larr; All Articles</a>
+</nav>
+
+<div class="article-hero">
+  <img src="../images/ButtonImage_liability.jpg" alt="Physical AI Is Deploying Into a Liability Vacuum" style="object-fit:contain;max-height:none">
+</div>
+
+<article class="article">
+  <div class="article-tag">The Builder's Lens</div>
+  <h1>Physical AI Is Deploying Into a Liability Vacuum</h1>
+  <div class="byline">Tebe Williams &middot; April 2026</div>
+
+  <div class="pullquote">Physical AI is being sold under contracts borrowed from software and insured under policies built for hardware. Neither fits. When something goes wrong in the physical world, and it already has, the question of who owns the outcome lands in a gap that nobody in the deal ever bothered to close. The insurance market wants to help but does not yet know how to price what you are. That is not a legal problem. It is a business problem, and it is sitting inside every deployment contract you have signed.</div>
+
+  <p>Physical AI is being deployed into real environments under contracts that were never designed for it. The indemnification language is borrowed from SaaS agreements. The liability caps are set based on deal size, not operational risk. And somewhere in that document, the question of who owns the outcome when the system makes a wrong decision in the physical world got quietly skipped.</p>
+
+  <p>This is not a hypothetical problem. It is a right-now problem that most Physical AI companies are ignoring until they cannot.</p>
+
+  <h2>The Nexus That Changes Everything</h2>
+
+  <p>When OpenAI or Anthropic causes harm, you are dealing with a software failure in a digital environment. The legal frameworks for that are imperfect, but they have a conceptual home: technology errors and omissions, product liability for software, negligence. Courts are beginning to work through those cases.</p>
+
+  <p>Physical AI is different in a way that matters. When a Physical AI system causes harm, you have a software decision executing through a physical body in a real environment. You cannot cleanly separate the two. Was it a model failure? A hardware defect? An environmental condition the system was never trained to handle? That question has no clean answer under current legal doctrine, and it is why standard product liability and standard tech E&amp;O both fall short. You need both, and even together they leave gaps.</p>
+
+  <h2>The Incidents Are Already Here</h2>
+
+  <p>In December 2023, a Tesla software engineer at the company's Austin factory was attacked by a malfunctioning robot that dug its claws into his back and arm. The incident did not surface publicly until it leaked. In November 2023, a South Korean worker was fatally crushed by an industrial robot that classified him as a box of vegetables. The hardware worked exactly as designed. The AI made a wrong call with a fatal outcome.</p>
+
+  <p>In both cases, the question of who was responsible was not settled by the contract. It was settled by whoever had the deepest pockets and the most exposure when lawyers arrived.</p>
+
+  <p>Neither of those incidents involved a three-party deployment. When the developer, the hardware manufacturer, and the operating customer are three separate companies, which is the typical Physical AI deal structure, the liability fog gets considerably thicker. All three parties have partial ownership of the conditions that led to an incident. None of them has a contract that says so clearly.</p>
+
+  <h2>The Insurance Market Knows It Has a Problem</h2>
+
+  <p>The insurance industry is not indifferent to Physical AI. The premium volume this space will eventually generate is enormous, and carriers are watching closely. The problem is underwriting. Actuaries need loss history to price risk accurately. Physical AI at scale is too new to have meaningful loss data. What you get instead is a Swiss cheese market: some carriers will write the policy, some will not, some will price it reasonably, and some will price it punitively with no logic you can follow. Two nearly identical deployments can produce wildly different insurance outcomes depending entirely on which underwriter you land on and how they have chosen to classify your system. It is not a closed market. It is a market that does not know what you are yet.</p>
+
+  <p>A few carriers are trying to get ahead of this. Armilla AI, backed by Lloyd's of London syndicates, launched coverage in 2025 that explicitly addresses AI-specific failures including model degradation and algorithmic malfunctions. AXIS Capital and Founder Shield have both introduced robotics-specific products because they recognized that traditional policies no longer map onto autonomous, cyber-physical systems. These are early movers in a market that is still finding its footing, and their willingness to write the policy does not mean the coverage is complete. It means the conversation has started.</p>
+
+  <p>Meanwhile, the ISO, the advisory body that sets standard policy forms for the industry, introduced generative AI exclusions for commercial general liability policies. Some of the largest carriers are quietly seeking permission to exclude AI liabilities from standard corporate coverage entirely. The market is simultaneously opening and narrowing, and most Physical AI companies are sitting somewhere in the middle of that without realizing it.</p>
+
+  <h2>Clarity Is a Sales Asset</h2>
+
+  <p>Enterprise buyers, particularly in regulated industries, are doing their own liability analysis before signing deployment contracts. A Physical AI company that walks into that conversation with a clean, plain-English breakdown of how risk is allocated across parties does not just protect itself legally. It shortens the sales cycle. It signals operational maturity. And when the first serious public incident resets the industry's contracting norms, the companies that had already done the work will look like the adults in the room.</p>
+
+  <p><strong>The companies that have not done it will be rewriting contracts at the worst possible moment.</strong></p>
+</article>
+
+<div class="article-footer">
+  <div class="subscribe-inline">
+    <h3>Follow me for alerts on new articles.</h3>
+    <p>Get notified when I publish new pieces on Physical AI and what it takes to build it.</p>
+    <form class="subscribe-form" action="https://formsubmit.co/tebewilliams.ai@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Article Subscriber">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://tebewilliams.ai/articles/physical_ai_liability.html">
+      <div class="form-group"><label for="sub-name">Full Name</label><input type="text" name="name" id="sub-name" placeholder="Jane Doe" required></div>
+      <div class="form-group"><label for="sub-email">Email</label><input type="email" name="email" id="sub-email" placeholder="jane@company.com" required></div>
+      <div class="form-group"><label for="sub-company">Company <span style="color:var(--muted);text-transform:none;font-family:'DM Sans',sans-serif">(optional)</span></label><input type="text" name="company" id="sub-company" placeholder="Acme Corp"></div>
+      <button type="submit" class="btn-p">Follow me for alerts on new articles.</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="fl"><a href="../index.html#about">About</a><a href="../index.html#expertise">Expertise</a><a href="../index.html#portfolio">Portfolio</a><a href="../index.html#consulting">Consulting</a><a href="../index.html#articles">Articles</a><a href="../index.html#contact">Contact</a></div>
+  <p>&copy; 2026 James Tebe Williams. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
