@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physical AI Builds Two Assets Simultaneously - Tebe Williams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #f4f6fb;
+  --bg2:       #e9ecf4;
+  --bg-card:   #ffffff;
+  --cyan:      #2d7d52;
+  --blue:      #1e3a8a;
+  --gold:      #c47a0a;
+  --txt:       #111827;
+  --txt2:      #4b5563;
+  --muted:     #6b7280;
+  --border:    #c5cad8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(244,246,251,0.92);border-bottom:1px solid rgba(0,0,0,0.08)}
+nav .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:-.02em;text-decoration:none;color:var(--txt)}
+nav .logo span{color:var(--cyan)}
+nav .back{color:var(--txt2);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .3s;display:flex;align-items:center;gap:.4rem}
+nav .back:hover{color:var(--cyan)}
+
+.article-hero{max-width:720px;margin:0 auto;padding:7rem 2rem 0}
+.article-hero img{width:100%;max-height:340px;object-fit:cover;border-radius:12px;display:block}
+.article{max-width:720px;margin:0 auto;padding:2rem 2rem 4rem}
+.article-tag{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.8rem;display:flex;align-items:center;gap:.75rem}
+.article-tag::before{content:'';width:36px;height:2px;background:var(--cyan)}
+.article h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem;text-wrap:balance}
+.article .byline{font-size:.85rem;color:var(--muted);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.article h2{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:-.01em;margin:2.5rem 0 .8rem;color:var(--txt)}
+.article p{color:var(--txt2);font-size:1rem;margin-bottom:1.4rem;line-height:1.85}
+.article p strong{color:var(--txt)}
+.article .pullquote{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:600;color:var(--txt);border-left:3px solid var(--cyan);padding-left:1.2rem;margin:2rem 0;line-height:1.5}
+
+.preamble{background:linear-gradient(135deg,rgba(45,125,82,.06),rgba(30,58,138,.04));border:1px solid rgba(45,125,82,.18);border-radius:12px;padding:1.5rem 1.75rem;margin-bottom:2.5rem}
+.preamble p{font-size:.97rem;color:var(--txt);line-height:1.75;margin-bottom:0;font-style:italic}
+.preamble-label{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.6rem}
+
+.article-footer{max-width:720px;margin:0 auto;padding:0 2rem 4rem}
+.article-footer .subscribe-inline{padding:2rem;background:linear-gradient(135deg,rgba(45,125,82,.04),rgba(30,58,138,.04));border:1px solid rgba(45,125,82,.12);border-radius:14px;text-align:center}
+.article-footer .subscribe-inline h3{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:600;margin-bottom:.3rem}
+.article-footer .subscribe-inline p{font-size:.88rem;color:var(--txt2);margin-bottom:1rem}
+.subscribe-form{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;align-items:flex-end}
+.subscribe-form .form-group{display:flex;flex-direction:column;text-align:left}
+.subscribe-form .form-group label{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;font-family:'JetBrains Mono',monospace}
+.subscribe-form input{padding:.6rem 1rem;border:1px solid var(--border);border-radius:8px;font-size:.85rem;font-family:'DM Sans',sans-serif;background:var(--bg-card);color:var(--txt);transition:border-color .3s;min-width:180px}
+.subscribe-form input:focus{outline:none;border-color:var(--cyan)}
+.subscribe-form input::placeholder{color:var(--muted)}
+.btn-p{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.8rem;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;border-radius:8px;transition:all .3s;border:none;cursor:pointer;white-space:nowrap}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(45,125,82,.3)}
+
+footer{padding:2.5rem 3rem;text-align:center;border-top:1px solid var(--border)}
+footer p{font-size:.75rem;color:var(--muted)}
+footer .fl{display:flex;justify-content:center;gap:2rem;margin-bottom:.8rem}
+footer .fl a{color:var(--txt2);text-decoration:none;font-size:.78rem;transition:color .3s}
+footer .fl a:hover{color:var(--cyan)}
+
+@media(max-width:640px){
+  nav{padding:.8rem 1.2rem}
+  .article-hero{padding:5rem 1.2rem 0}
+  .article{padding:1.5rem 1.2rem 3rem}
+  .article-footer{padding:0 1.2rem 3rem}
+  .subscribe-form{flex-direction:column;align-items:stretch}
+  .subscribe-form .form-group{width:100%}
+  .subscribe-form input{min-width:0;width:100%}
+  .btn-p{width:100%;justify-content:center;min-height:44px}
+  footer{padding:2rem 1.2rem}
+  footer .fl{flex-wrap:wrap;gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">tebe<span>.</span>williams</a>
+  <a href="../index.html#articles" class="back">&larr; All Articles</a>
+</nav>
+
+<div class="article-hero">
+  <img src="../images/ButtonImage_two_assets_physical_ai.jpg" alt="Physical AI Builds Two Assets Simultaneously">
+</div>
+
+<article class="article">
+  <div class="article-tag">The Builder's Lens</div>
+  <h1>Physical AI Builds Two Assets Simultaneously. Most Companies Are Only Managing One.</h1>
+  <div class="byline">Tebe Williams &middot; April 2026</div>
+
+  <div class="preamble">
+    <div class="preamble-label">The Short Version</div>
+    <p>Every Physical AI deployment produces two things: A service and a dataset. The service is what you sell. The dataset is what compounds. Most Physical AI companies are running their deployments as service businesses and treating the data as a byproduct. The companies that understand both assets are building something harder to replicate than any single product. The ones that do not are leaving their most durable competitive advantage sitting on the floor.</p>
+  </div>
+
+  <p>When VS Networks put touchscreens into John Deere dealerships, the pitch to customers was a better in-aisle selection experience. That was the service, and it was real. But the data those screens generated, product registrations, customer purchase intent, brand engagement at the point of decision, turned out to be equally valuable. Some of our most important revenue streams came not from the device on the wall but from what the device was learning about the people standing in front of it. We were running a service business and a data business simultaneously. The companies that recognized that early grew differently from the ones that did not.</p>
+
+  <p>Physical AI is repeating this pattern at a larger scale and a faster pace, and most of the builders in this space are only managing one of the two assets their deployments are generating.</p>
+
+  <h2>The Service Is Obvious. The Dataset Is Not.</h2>
+
+  <p>A Physical AI deployment earns its keep by doing something: Moving inventory, serving food, navigating a facility, running a diagnostic. That output is easy to price, easy to sell, and easy to measure. It is also easy to commoditize. Hardware improves. Competitors emerge. The service that differentiated you in year one becomes table stakes in year three.</p>
+
+  <p>The dataset your deployment generates is a different kind of asset. It reflects real-world conditions, real customer behavior, and real operational environments that no lab can replicate. It gets more valuable with every additional deployment. And it is almost impossible for a late entrant to reproduce without running the same deployments for the same duration in the same environments.</p>
+
+  <p>The companies treating this seriously are building accordingly. Mind Robotics, spun out of Rivian, was founded explicitly to use data from Rivian's manufacturing operations to train industrial robots. The factory floor is not just the customer. It is the data source that makes the product better. Physical Intelligence has structured its entire business model around the same insight: Every robot running their models feeds the next version of those models, and that compounding loop is what justified a $5.6 billion valuation before the company had meaningful product revenue.</p>
+
+  <h2>Two Assets, One Deployment</h2>
+
+  <p>The operational question is not whether your deployment generates valuable data. It does. The question is whether you have built the architecture to capture it, the contracts to own it, and the product roadmap to monetize it.</p>
+
+  <p>Most Physical AI companies have not done that work. The data is there. The pipeline is not.</p>
+
+  <p>The companies that build both assets from day one will not just outperform on service margins. They will exit at a different multiple entirely, because what they are selling is not a service contract. It is a proprietary dataset that no competitor can buy their way into.</p>
+
+</article>
+
+<div class="article-footer">
+  <div class="subscribe-inline">
+    <h3>Follow me for alerts on new articles.</h3>
+    <p>Get notified when I publish new pieces on Physical AI and the operator's role in it.</p>
+    <form class="subscribe-form" action="https://formsubmit.co/tebewilliams.ai@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Article Subscriber">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://tebewilliams.ai/articles/two_assets_physical_ai.html">
+      <div class="form-group"><label for="sub-name">Full Name</label><input type="text" name="name" id="sub-name" placeholder="Jane Doe" required></div>
+      <div class="form-group"><label for="sub-email">Email</label><input type="email" name="email" id="sub-email" placeholder="jane@company.com" required></div>
+      <div class="form-group"><label for="sub-company">Company <span style="color:var(--muted);text-transform:none;font-family:'DM Sans',sans-serif">(optional)</span></label><input type="text" name="company" id="sub-company" placeholder="Acme Corp"></div>
+      <button type="submit" class="btn-p">Follow me for alerts on new articles.</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="fl"><a href="../index.html#about">About</a><a href="../index.html#expertise">Expertise</a><a href="../index.html#portfolio">Portfolio</a><a href="../index.html#consulting">Consulting</a><a href="../index.html#articles">Articles</a><a href="../index.html#contact">Contact</a></div>
+  <p>&copy; 2026 James Tebe Williams. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
