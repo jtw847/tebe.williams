@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physical AI Companies Are Pricing Their Way Into a Bad Business - Tebe Williams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #f4f6fb;
+  --bg2:       #e9ecf4;
+  --bg-card:   #ffffff;
+  --cyan:      #2d7d52;
+  --blue:      #1e3a8a;
+  --gold:      #c47a0a;
+  --txt:       #111827;
+  --txt2:      #4b5563;
+  --muted:     #6b7280;
+  --border:    #c5cad8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(244,246,251,0.92);border-bottom:1px solid rgba(0,0,0,0.08)}
+nav .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:-.02em;text-decoration:none;color:var(--txt)}
+nav .logo span{color:var(--cyan)}
+nav .back{color:var(--txt2);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .3s;display:flex;align-items:center;gap:.4rem}
+nav .back:hover{color:var(--cyan)}
+
+.article-hero{max-width:720px;margin:0 auto;padding:7rem 2rem 0}
+.article-hero img{width:100%;max-height:340px;object-fit:cover;border-radius:12px;display:block}
+.article{max-width:720px;margin:0 auto;padding:2rem 2rem 4rem}
+.article-tag{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.8rem;display:flex;align-items:center;gap:.75rem}
+.article-tag::before{content:'';width:36px;height:2px;background:var(--cyan)}
+.article h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem;text-wrap:balance}
+.article .byline{font-size:.85rem;color:var(--muted);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.article h2{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:-.01em;margin:2.5rem 0 .8rem;color:var(--txt)}
+.article p{color:var(--txt2);font-size:1rem;margin-bottom:1.4rem;line-height:1.85}
+.article p strong{color:var(--txt)}
+.article .pullquote{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:600;color:var(--txt);border-left:3px solid var(--cyan);padding-left:1.2rem;margin:2rem 0;line-height:1.5}
+
+.preamble{background:linear-gradient(135deg,rgba(45,125,82,.06),rgba(30,58,138,.04));border:1px solid rgba(45,125,82,.18);border-radius:12px;padding:1.5rem 1.75rem;margin-bottom:2.5rem}
+.preamble p{font-size:.97rem;color:var(--txt);line-height:1.75;margin-bottom:0;font-style:italic}
+.preamble-label{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.6rem}
+
+.article-footer{max-width:720px;margin:0 auto;padding:0 2rem 4rem}
+.article-footer .subscribe-inline{padding:2rem;background:linear-gradient(135deg,rgba(45,125,82,.04),rgba(30,58,138,.04));border:1px solid rgba(45,125,82,.12);border-radius:14px;text-align:center}
+.article-footer .subscribe-inline h3{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:600;margin-bottom:.3rem}
+.article-footer .subscribe-inline p{font-size:.88rem;color:var(--txt2);margin-bottom:1rem}
+.subscribe-form{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;align-items:flex-end}
+.subscribe-form .form-group{display:flex;flex-direction:column;text-align:left}
+.subscribe-form .form-group label{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;font-family:'JetBrains Mono',monospace}
+.subscribe-form input{padding:.6rem 1rem;border:1px solid var(--border);border-radius:8px;font-size:.85rem;font-family:'DM Sans',sans-serif;background:var(--bg-card);color:var(--txt);transition:border-color .3s;min-width:180px}
+.subscribe-form input:focus{outline:none;border-color:var(--cyan)}
+.subscribe-form input::placeholder{color:var(--muted)}
+.btn-p{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.8rem;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;border-radius:8px;transition:all .3s;border:none;cursor:pointer;white-space:nowrap}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(45,125,82,.3)}
+
+footer{padding:2.5rem 3rem;text-align:center;border-top:1px solid var(--border)}
+footer p{font-size:.75rem;color:var(--muted)}
+footer .fl{display:flex;justify-content:center;gap:2rem;margin-bottom:.8rem}
+footer .fl a{color:var(--txt2);text-decoration:none;font-size:.78rem;transition:color .3s}
+footer .fl a:hover{color:var(--cyan)}
+
+@media(max-width:640px){
+  nav{padding:.8rem 1.2rem}
+  .article-hero{padding:5rem 1.2rem 0}
+  .article{padding:1.5rem 1.2rem 3rem}
+  .article-footer{padding:0 1.2rem 3rem}
+  .subscribe-form{flex-direction:column;align-items:stretch}
+  .subscribe-form .form-group{width:100%}
+  .subscribe-form input{min-width:0;width:100%}
+  .btn-p{width:100%;justify-content:center;min-height:44px}
+  footer{padding:2rem 1.2rem}
+  footer .fl{flex-wrap:wrap;gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">tebe<span>.</span>williams</a>
+  <a href="../index.html#articles" class="back">&larr; All Articles</a>
+</nav>
+
+<div class="article-hero">
+  <img src="../images/ButtonImage_pricing-your-way-into-a-bad-business.jpg" alt="Physical AI Companies Are Pricing Their Way Into a Bad Business">
+</div>
+
+<article class="article">
+  <div class="article-tag">The Builder's Lens</div>
+  <h1>Physical AI Companies Are Pricing Their Way Into a Bad Business</h1>
+  <div class="byline">Tebe Williams &middot; May 2026</div>
+
+  <div class="preamble">
+    <div class="preamble-label">The Short Version</div>
+    <p>Physical AI cannot be priced like software. The companies that try are not running into a sales problem. They are running into the cap table.</p>
+  </div>
+
+  <p>AI software and AI robotics are not the same business. A lot of Physical AI companies are pricing like they are, and it is going to cost them their cap table.</p>
+
+  <h2>SaaS Economics Work Because of What Is Not on the Balance Sheet</h2>
+
+  <p>A software company has a large upfront engineering cost, a moderate ongoing maintenance cost, and a sales and marketing line that scales with revenue. There is no warehouse of physical inventory. There is no recurring CAPEX cycle. There is no field service organization swapping out hardware in the customer's facility. The reason a SaaS company can charge a flat monthly per-seat fee and still print software-style margins is that nothing about delivering one more seat costs them anything close to what it cost to deliver the first one. The pricing model and the cost structure are aligned, and that alignment is what produces the multiple.</p>
+
+  <h2>RaaS Is a Different Animal &mdash; Somebody Always Owns the Asset</h2>
+
+  <p>With Robotics-as-a-Service, the customer pays an operating expense, but the capital expense does not disappear. It moves onto the operator's balance sheet. Every deployment requires a physical machine that has to be built, shipped, installed, integrated, refreshed on a hardware cycle, and supported in the field. The software development cost is still there. The maintenance burden is higher than SaaS, not lower, because the AI itself is changing fast enough that models have to be retrained and revalidated on real-world data. The S&amp;M line is bigger because every deal is also a project. The RaaS company is running a software company, a hardware company, and a field operations company at the same time, and the pricing model has to carry all three.</p>
+
+  <h2>Locus Robotics Is What RaaS Pricing Actually Has to Look Like</h2>
+
+  <p>Locus charges roughly $2,000 to $4,000+ per bot per month, with a setup fee that covers site design, on-prem servers, Wi-Fi, training, and delivery. That is a materially higher number than a software-only subscription would ever carry, and it is also higher than a stripped-down robotics lease that asks the customer to figure out installation, integration, and uptime on their own. The reason it has to be that high is that the price covers the entire stack: the robot itself, the cloud software, the integration, the field deployment, the ongoing support, the optimization, and the hardware refresh cycle. The unit of pricing is not a seat or a license. It is a physical bot that Locus owns, depreciates, refreshes, and absorbs deployment risk on. The customer gets OpEx. Locus carries the CAPEX. That is the real shape of RaaS pricing when it is built honestly: the price reflects the asset, the deployment, and the ongoing operating cost, not just the software.</p>
+
+  <h2>Berkshire Grey Is What Happens When You Let the SaaS Narrative Drive a Non-SaaS Business</h2>
+
+  <p>Berkshire Grey went public via SPAC in February 2021 at a $2.7 billion valuation. The pitch was a recurring-revenue, scale-and-flywheel story that read like a software company. The underlying business required real CAPEX deployed in front of every customer before any recurring revenue showed up, and the conversion to RaaS-style economics ran slower than the public market was willing to wait for. SoftBank took them private in July 2023 at $1.40 per share, a $375 million deal &mdash; an 86% discount to the SPAC valuation. The pricing model alone did not kill the company. The mismatch between the pricing narrative and the capital structure underneath it did. The market eventually re-rated them to industrial multiples, and the gap between those two valuations was the bill.</p>
+
+  <h2>Pick the Pricing Model for the Exit, Not for the Next Contract</h2>
+
+  <p>Most Physical AI companies pick a pricing model based on what closed their first three customers, then live with it forever. The first three customers are not the strategy. The pricing model is a balance-sheet decision and an exit decision dressed up as a sales decision. RaaS, per-use, and CAPEX each produce a different unit economics profile, a different churn shape, a different working capital requirement, and a different acquirer in the room when you are ready to sell. You do not have to be planning to exit to need that north star. You need it to know which contracts to sign, which customers to walk from, and which line of the model is allowed to break.</p>
+
+  <p class="pullquote">The hard sell now is the easier conversation later. The easy sell now is the conversation you do not get to have, because by the time you realize the model is wrong, it is in every contract you have signed.</p>
+
+</article>
+
+<div class="article-footer">
+  <div class="subscribe-inline">
+    <h3>Follow me for alerts on new articles.</h3>
+    <p>Get notified when I publish new pieces on Physical AI and the operator's role in it.</p>
+    <form class="subscribe-form" action="https://formsubmit.co/tebewilliams.ai@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Article Subscriber">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://tebewilliams.ai/articles/pricing-your-way-into-a-bad-business.html">
+      <div class="form-group"><label for="sub-name">Full Name</label><input type="text" name="name" id="sub-name" placeholder="Jane Doe" required></div>
+      <div class="form-group"><label for="sub-email">Email</label><input type="email" name="email" id="sub-email" placeholder="jane@company.com" required></div>
+      <div class="form-group"><label for="sub-company">Company <span style="color:var(--muted);text-transform:none;font-family:'DM Sans',sans-serif">(optional)</span></label><input type="text" name="company" id="sub-company" placeholder="Acme Corp"></div>
+      <button type="submit" class="btn-p">Follow me for alerts on new articles.</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="fl"><a href="../index.html#about">About</a><a href="../index.html#expertise">Expertise</a><a href="../index.html#portfolio">Portfolio</a><a href="../index.html#consulting">Consulting</a><a href="../index.html#articles">Articles</a><a href="../index.html#contact">Contact</a></div>
+  <p>&copy; 2026 James Tebe Williams. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
