@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 30th Deployment Is a Different Company - Tebe Williams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #f4f6fb;
+  --bg2:       #e9ecf4;
+  --bg-card:   #ffffff;
+  --cyan:      #2d7d52;
+  --blue:      #1e3a8a;
+  --gold:      #c47a0a;
+  --txt:       #111827;
+  --txt2:      #4b5563;
+  --muted:     #6b7280;
+  --border:    #c5cad8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(244,246,251,0.92);border-bottom:1px solid rgba(0,0,0,0.08)}
+nav .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:-.02em;text-decoration:none;color:var(--txt)}
+nav .logo span{color:var(--cyan)}
+nav .back{color:var(--txt2);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .3s;display:flex;align-items:center;gap:.4rem}
+nav .back:hover{color:var(--cyan)}
+
+.article-hero{max-width:720px;margin:0 auto;padding:7rem 2rem 0}
+.article-hero img{width:100%;max-height:340px;object-fit:cover;border-radius:12px;display:block}
+.article{max-width:720px;margin:0 auto;padding:2rem 2rem 4rem}
+.article-tag{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.8rem;display:flex;align-items:center;gap:.75rem}
+.article-tag::before{content:'';width:36px;height:2px;background:var(--cyan)}
+.article h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem;text-wrap:balance}
+.article .byline{font-size:.85rem;color:var(--muted);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.article h2{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:-.01em;margin:2.5rem 0 .8rem;color:var(--txt)}
+.article p{color:var(--txt2);font-size:1rem;margin-bottom:1.4rem;line-height:1.85}
+.article p strong{color:var(--txt)}
+.article .pullquote{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:600;color:var(--txt);border-left:3px solid var(--cyan);padding-left:1.2rem;margin:2rem 0;line-height:1.5}
+.article .tldr{background:rgba(45,125,82,.06);border:1px solid rgba(45,125,82,.18);border-radius:10px;padding:1.2rem 1.4rem;margin:0 0 2.5rem 0}
+.article .tldr-label{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.14em;margin-bottom:.4rem;font-weight:500}
+.article .tldr p{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:500;color:var(--txt);margin:0;line-height:1.55}
+
+.article-footer{max-width:720px;margin:0 auto;padding:0 2rem 4rem}
+.article-footer .subscribe-inline{padding:2rem;background:linear-gradient(135deg,rgba(45,125,82,.04),rgba(30,58,138,.04));border:1px solid rgba(45,125,82,.12);border-radius:14px;text-align:center}
+.article-footer .subscribe-inline h3{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:600;margin-bottom:.3rem}
+.article-footer .subscribe-inline p{font-size:.88rem;color:var(--txt2);margin-bottom:1rem}
+.subscribe-form{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;align-items:flex-end}
+.subscribe-form .form-group{display:flex;flex-direction:column;text-align:left}
+.subscribe-form .form-group label{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;font-family:'JetBrains Mono',monospace}
+.subscribe-form input{padding:.6rem 1rem;border:1px solid var(--border);border-radius:8px;font-size:.85rem;font-family:'DM Sans',sans-serif;background:var(--bg-card);color:var(--txt);transition:border-color .3s;min-width:180px}
+.subscribe-form input:focus{outline:none;border-color:var(--cyan)}
+.subscribe-form input::placeholder{color:var(--muted)}
+.btn-p{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.8rem;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;border-radius:8px;transition:all .3s;border:none;cursor:pointer;white-space:nowrap}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(45,125,82,.3)}
+
+footer{padding:2.5rem 3rem;text-align:center;border-top:1px solid var(--border)}
+footer p{font-size:.75rem;color:var(--muted)}
+footer .fl{display:flex;justify-content:center;gap:2rem;margin-bottom:.8rem}
+footer .fl a{color:var(--txt2);text-decoration:none;font-size:.78rem;transition:color .3s}
+footer .fl a:hover{color:var(--cyan)}
+
+@media(max-width:640px){
+  nav{padding:.8rem 1.2rem}
+  .article-hero{padding:5rem 1.2rem 0}
+  .article{padding:1.5rem 1.2rem 3rem}
+  .article-footer{padding:0 1.2rem 3rem}
+  .subscribe-form{flex-direction:column;align-items:stretch}
+  .subscribe-form .form-group{width:100%}
+  .subscribe-form input{min-width:0;width:100%}
+  .btn-p{width:100%;justify-content:center;min-height:44px}
+  footer{padding:2rem 1.2rem}
+  footer .fl{flex-wrap:wrap;gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">tebe<span>.</span>williams</a>
+  <a href="../index.html#articles" class="back">&larr; All Articles</a>
+</nav>
+
+<div class="article-hero">
+  <img src="../images/ButtonImage_30thDeployment.jpg" alt="The 30th Deployment Is a Different Company">
+</div>
+
+<article class="article">
+  <div class="article-tag">Physical AI</div>
+  <h1>The 30th Deployment Is a Different Company</h1>
+  <div class="byline">Tebe Williams &middot; May 2026</div>
+
+  <div class="tldr">
+    <div class="tldr-label">Short Version</div>
+    <p>The team that built the prototype cannot also operate 30 deployments and build the next version. Most Physical AI founders find that out too late to fix it.</p>
+  </div>
+
+  <p>Every Physical AI company has a creation myth, and it usually runs through the same four steps. Someone builds a prototype that works on a workbench. Then the prototype works inside the lab. Then a presumptive go-to-market version works inside the lab. Then it leaves the building. Founders call that last step their first deployment. It is not. It is the first time the company finds out what a deployment actually is.</p>
+
+  <div class="pullquote">The first deployment is not the first deployment. It is the first time the company finds out what a deployment actually is.</div>
+
+  <h2>From Engineering to Operations</h2>
+  <p>The four prior steps were engineering. The next four are something else entirely. Deployment two is in a different facility with different floors, different lighting, different people, and a different operating cadence. Deployment three brings a second customer with a different procurement process and a different definition of done. By deployment five, the machine is being asked to do things the lab version was never tested against, in conditions the original requirements document never imagined. Each one is a step-change in complexity. Each one is handled by the same small team that built the original.</p>
+
+  <h2>Duct Tape Mode</h2>
+  <p>So they do what every smart engineering team does. They patch. They write a one-off script for that customer&rsquo;s WMS. They add a custom mounting bracket for that ceiling height. They hard-code a workaround for the forklift driver who keeps blocking lane four. By deployment ten, every site has a half-dozen of these. By deployment thirty, the company is held together with duct tape, and nobody has a complete map of where the tape is.</p>
+  <p>This is the wall. Not a technology wall. An operational wall. The team that built the machine cannot also operate thirty of them and build the next version. The patches that made site twelve work are now the reason site twenty-three is breaking. Customer success is three engineers and a Slack channel.</p>
+
+  <div class="pullquote">By deployment thirty, the company is held together with duct tape, and nobody has a complete map of where the tape is.</div>
+
+  <h2>The Choice Comes at Deployment Three</h2>
+  <p>The companies that get to three hundred deployments make a specific choice early, and they make it around deployment three. The choice is to treat every patch as a forced disclosure of something the platform does not yet handle, and to build the response so it scales. Duct tape is still allowed. It just has to be duct tape that makes the next two hundred and ninety-seven sites possible, not the next one.</p>
+
+  <h2>The Companies That Hit the Wall</h2>
+  <p>Cooler Screens is the cautionary tale. The pilots worked. At scale across Walgreens, the screens froze, displayed wrong inventory, occasionally caught fire, and generated less than half the contractual minimum in ad revenue per door. Walgreens pulled more than ten thousand screens from seven hundred stores. Roughly fifty million dollars of custom units now sit in a Texas warehouse, and the two companies are litigating two hundred million dollars in damages. The pilot did not lie. The operational substrate to support the rollout was never built.</p>
+  <p>Cruise is the same story compressed. Aggressive expansion toward ten cities by year-end, on a software stack that could not handle a pedestrian thrown into its lane and a pullover maneuver that dragged her twenty feet. The technology was good enough for the demo. It was not good enough for the surface area of a deployment.</p>
+
+  <h2>The Companies That Moved Slowly Enough</h2>
+  <p>Symbotic, by contrast, has been deploying inside Walmart since 2017 and is planning roughly eight more years to retrofit forty-two regional distribution centers. Locus Robotics scaled inside DHL one site at a time starting in 2017 and now runs across more than forty DHL sites globally. Zipline ran nationwide in Rwanda for years before exporting the model. Each one moved slowly enough early that the thirtieth deployment looked like the third, only bigger.</p>
+
+  <div class="pullquote">Each one moved slowly enough early that the thirtieth deployment looked like the third, only bigger.</div>
+
+  <h2>The Lesson</h2>
+  <p>The lesson is unforgiving. If you are at deployment three and you are not already designing for three hundred, the wall is already in front of you. You just have not hit it yet.</p>
+</article>
+
+<div class="article-footer">
+  <div class="subscribe-inline">
+    <h3>Follow me for alerts on new articles.</h3>
+    <p>Get notified when I publish new pieces on Physical AI and the CFO&rsquo;s role in it.</p>
+    <form class="subscribe-form" action="https://formsubmit.co/tebewilliams.ai@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Article Subscriber">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://tebewilliams.ai/articles/the_30th_deployment.html">
+      <div class="form-group"><label for="sub-name">Full Name</label><input type="text" name="name" id="sub-name" placeholder="Jane Doe" required></div>
+      <div class="form-group"><label for="sub-email">Email</label><input type="email" name="email" id="sub-email" placeholder="jane@company.com" required></div>
+      <div class="form-group"><label for="sub-company">Company <span style="color:var(--muted);text-transform:none;font-family:'DM Sans',sans-serif">(optional)</span></label><input type="text" name="company" id="sub-company" placeholder="Acme Corp"></div>
+      <button type="submit" class="btn-p">Follow me for alerts on new articles.</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="fl"><a href="../index.html#about">About</a><a href="../index.html#expertise">Expertise</a><a href="../index.html#portfolio">Portfolio</a><a href="../index.html#consulting">Consulting</a><a href="../index.html#articles">Articles</a><a href="../index.html#contact">Contact</a></div>
+  <p>&copy; 2026 James Tebe Williams. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
